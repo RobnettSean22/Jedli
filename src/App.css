@@ -13,12 +13,24 @@ body {
   background-image: url(./assests/JedliStreet.jpg);
   background-repeat: no-repeat;
   background-size: 100%, 190%;
-
   background-position: bottom;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.fire {
-  height: 25%;
-  width: 100%;
+.first {
+  height: 100%;
+  width: 20%;
+  background: pink;
+}
+.mid {
+  height: 100%;
+  width: 60%;
+}
+.third {
+  height: 100%;
+  width: 20%;
+  background: blue;
 }
 
 /* img {
