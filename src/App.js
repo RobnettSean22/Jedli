@@ -5,9 +5,10 @@ import "./App.css";
 function App() {
   return (
     <div className='App'>
-      <div className='first'></div>
-      <div className='mid'></div>
-      <div className='third'></div>
+      <div className='head'></div>
+      <div className='title'>
+        <h1>JedLi</h1>
+      </div>
     </div>
   );
 }

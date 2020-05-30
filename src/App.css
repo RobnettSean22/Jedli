@@ -15,22 +15,22 @@ body {
   background-size: 100%, 190%;
   background-position: bottom;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
 }
-.first {
-  height: 100%;
-  width: 20%;
+.head {
+  height: 15%;
+  width: 100%;
   background: pink;
 }
-.mid {
+.title {
   height: 100%;
   width: 60%;
 }
-.third {
-  height: 100%;
-  width: 20%;
-  background: blue;
+
+h1 {
+  text-align: center;
 }
 
 /* img {
