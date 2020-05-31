@@ -27,10 +27,27 @@ body {
 .title {
   height: 100%;
   width: 60%;
-}
+  h1 {
+    margin: 0;
+    font-size: 159px;
+    text-align: center;
+  }
 
-h1 {
-  text-align: center;
+  ul {
+    list-style: none;
+    text-align: center;
+    li {
+      button {
+        width: 17%;
+        height: 50px;
+        font-size: 43px;
+        padding: 0;
+      }
+      padding: 0px 4% 0 0%;
+      display: inline;
+      font-size: 45px;
+    }
+  }
 }
 
 /* img {
