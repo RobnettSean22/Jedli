@@ -36,16 +36,45 @@ body {
   ul {
     list-style: none;
     text-align: center;
+    margin: 0;
     li {
+      display: inline;
+      padding: 0px 4% 0 0%;
+      font-size: 45px;
+    }
+    li:nth-child(1) {
       button {
-        width: 17%;
+        width: 15%;
         height: 50px;
         font-size: 43px;
         padding: 0;
+        border: 1px solid;
+        border-radius: 6px;
+        background: #9ccf26;
+        &:focus {
+          outline: none;
+        }
+        &:hover {
+          height: 51px;
+          border: 1px white solid;
+          font-size: 44px;
+          cursor: pointer;
+        }
       }
-      padding: 0px 4% 0 0%;
-      display: inline;
-      font-size: 45px;
+    }
+    li:nth-child(2) {
+      &:hover {
+        font-size: 43px;
+        border-bottom: 2px white solid;
+        cursor: pointer;
+      }
+    }
+    li:nth-child(3) {
+      &:hover {
+        font-size: 43px;
+        border-bottom: 2px white solid;
+        cursor: pointer;
+      }
     }
   }
 }
