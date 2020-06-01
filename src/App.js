@@ -21,7 +21,12 @@ function App() {
           </div>
         </div>
       </div>
-      <div id='albums'>hello</div>
+      <div id='music'>
+        <div id='albums'></div>
+      </div>
+      <div id='events'></div>
+      <div id='previous_events'></div>
+      <div id='style'></div>
     </div>
   );
 }
