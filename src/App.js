@@ -26,10 +26,30 @@ function App() {
       </div>
       <div id='events'>
         <div id='timer'>
-          <div id='clock'></div>
-          <div id='current-event'></div>
+          <div id='clock'>
+            <div id='clock_container'></div>
+          </div>
+          <div id='current-event'>
+            <div>
+              <h1>Event title</h1>
+            </div>
+            <div>
+              <h2>Loocations</h2>
+            </div>
+            <div>
+              <h3>Date</h3>
+            </div>
+          </div>
         </div>
-        <div id='directions'></div>
+        <div id='directions'>
+          <div>
+            <div className='event-info'></div>
+            <div className='event-info'></div>
+            <div className='event-info'></div>
+            <div className='event-info'></div>
+            <div className='event-info'></div>
+          </div>
+        </div>
       </div>
       <div id='previous_events'>
         <div id='event-links'></div>
