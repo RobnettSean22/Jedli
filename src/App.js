@@ -13,10 +13,16 @@ function App() {
           <div className='links'>
             <ul>
               <li>
-                <button>music</button>
+                <a href='#music'>
+                  <button>music</button>
+                </a>
               </li>
-              <li>events</li>
-              <li>style</li>
+              <li>
+                <a href='#events'>events</a>
+              </li>
+              <li>
+                <a href='#styles'>styles</a>
+              </li>
             </ul>
           </div>
         </div>
@@ -55,7 +61,7 @@ function App() {
         <div id='event-links'></div>
         <div id='past_events'></div>
       </div>
-      <div id='style'></div>
+      <div id='styles'></div>
     </div>
   );
 }
