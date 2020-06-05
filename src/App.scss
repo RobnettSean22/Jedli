@@ -35,6 +35,9 @@ body {
         margin: 0;
         font-size: 159px;
         text-align: center;
+        font-family: "Orbitron", sans-serif;
+        color: #f58f18;
+        text-shadow: 2px 2px #9ccf26;
       }
 
       ul {
@@ -45,6 +48,7 @@ body {
           display: inline;
           padding: 0px 4% 0 0%;
           font-size: 45px;
+          font-family: "Coda", cursive;
         }
         li:nth-child(1) {
           button {
@@ -55,6 +59,7 @@ body {
             border: 1px solid;
             border-radius: 6px;
             background: #9ccf26;
+            font-family: "Coda", cursive;
             &:focus {
               outline: none;
             }
