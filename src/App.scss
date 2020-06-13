@@ -4,6 +4,9 @@ body {
   overflow-y: auto;
   overflow-x: hidden;
 }
+html {
+  scroll-behavior: smooth;
+}
 .App {
   height: 100%;
   width: 100%;
