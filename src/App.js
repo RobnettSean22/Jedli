@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Switch, Route, __RouterContext } from "react-dom";
+import { Switch, Route, __RouterContext } from "react-router";
 import { useTransition, animated } from "react-spring";
 import Music from "./compnents/Music";
 import "./App.scss";

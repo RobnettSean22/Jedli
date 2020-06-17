@@ -1,15 +1,8 @@
-import React, { Component } from "react";
+import React from "react";
+import { withRouter } from "react-router-dom";
 
-class Music extends Component {
-  constructor(props) {
-    super(props);
+const Music = () => {
+  return <div></div>;
+};
 
-    this.state = {};
-  }
-
-  render() {
-    return <div></div>;
-  }
-}
-
-export default Music;
+export default withRouter(Music);
