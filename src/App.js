@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { Switch, Route, __RouterContext } from "react-router";
 import { useTransition, animated } from "react-spring";
-import Music from "./compnents/Music";
+import Music from "./compnents/Music/Music";
 import "./App.scss";
 
 const App = () => {
