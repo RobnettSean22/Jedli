@@ -1,5 +1,5 @@
 body {
-  background: #130623;
+  background: #161513;
   width: 100vw;
   height: 100vh;
 }
@@ -12,7 +12,8 @@ div {
   #tiled {
     width: 94%;
     height: 95%;
-    border: 2px solid #f58f00;
+    border: 4px double #f58f00;
+    border-radius: 1px;
     background: black;
     #top {
       width: 100%;
