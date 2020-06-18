@@ -1,5 +1,5 @@
 body {
-  background: blue;
+  background: #130623;
   width: 100vw;
   height: 100vh;
 }
@@ -10,9 +10,9 @@ div {
   justify-content: center;
   align-items: center;
   #tiled {
-    position: absolute;
-    width: 85%;
+    width: 94%;
     height: 95%;
+    border: 2px solid #f58f00;
     background: black;
     #top {
       width: 100%;
