@@ -1,7 +1,8 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
-function Lyrics() {
+
+function PastEvents() {
   return <div></div>;
 }
 
-export default withRouter(Lyrics);
+export default withRouter(PastEvents);

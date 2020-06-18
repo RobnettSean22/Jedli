@@ -1,7 +1,6 @@
 import React from "react";
 import Header from "../Header/Header";
 import "./Music.scss";
-
 import { withRouter } from "react-router-dom";
 
 const Music = () => {
