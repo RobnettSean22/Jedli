@@ -18,13 +18,19 @@ function Header() {
       <div id='linkContain'>
         <ul>
           <li>
-            <NavLink to='/'>Music</NavLink>
+            <NavLink activeClassName='active' className='inactive' to='/'>
+              Music
+            </NavLink>
           </li>
           <li>
-            <NavLink to='events'>Events</NavLink>
+            <NavLink activeClassName='active' className='inactive' to='events'>
+              Events
+            </NavLink>
           </li>
           <li>
-            <NavLink to='story'>Story</NavLink>
+            <NavLink activeClassName='active' className='inactive' to='story'>
+              Story
+            </NavLink>
           </li>
         </ul>
       </div>
