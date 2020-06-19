@@ -13,30 +13,39 @@ class App extends Component {
     super(props);
 
     this.state = {
-      content: ""
+      music: ""
     };
+  }
+  componentDidMount() {
+    this.arival();
   }
 
   arival = () => {
     axios
       .get(
-        `https://itunes.apple.com/search?term=jedli
+        `https://itunes.apple.com/search?term=JedLi&country=JP
     `
       )
       .then(res => {
-        this.state({
-          content: res.data
+        this.setState({
+          music: res.data
         });
       });
   };
 
   render() {
-    console.log(this.state.content);
+    const { music } = this.state;
+    console.log(music);
     return (
       <div>
         <div id='tiled'>
           <Switch>
-            <Route exact path='/' exact render={() => <Music />} />
+            <Route
+              exact
+              path='/'
+              exact
+              render={() => <Music content={music} />}
+            />
             <Route exact path='/lyrics' component={Lyrics} />
             <Route exact path='/events' component={Events} />
             <Route exact path='/past-events' component={PastEvents} />

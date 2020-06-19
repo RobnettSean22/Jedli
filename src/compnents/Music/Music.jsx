@@ -3,7 +3,7 @@ import Header from "../Header/Header";
 import "./Music.scss";
 import { withRouter } from "react-router-dom";
 
-const Music = () => {
+const Music = props => {
   return (
     <div id='musicCase'>
       <Header />
