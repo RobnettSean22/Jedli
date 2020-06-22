@@ -20,21 +20,22 @@ class App extends Component {
     this.arival();
   }
 
-  arival = () => {
-    axios
-      .get(
-        `https://itunes.apple.com/search?term=JedLi&country=JP
-    `
-      )
-      .then(res => {
-        this.setState({
-          music: res.data
-        });
-      });
-  };
+  async arival() {
+    const res = await axios.get(
+      `https://itunes.apple.com/search?term=JedLi&country=JP`
+    );
+    const { data } = await res;
+    const filterMusic = await data.results.filter(specArtist => {
+      return specArtist.artistId === 1492578733;
+    });
+    this.setState({
+      music: filterMusic
+    });
+  }
 
   render() {
     const { music } = this.state;
+
     console.log(music);
     return (
       <div>
