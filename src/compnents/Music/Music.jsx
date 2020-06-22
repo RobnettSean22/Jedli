@@ -7,21 +7,32 @@ class Music extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {};
+    this.state = {
+      loading: true
+    };
   }
 
   render() {
     const { content } = this.props;
+    const { loading } = this.state;
     console.log(content);
-    const mapContent = content.map(song => {
-      return <div key={song.trackCount}>{song.trackName}</div>;
-    });
+
     return (
       <div id='musicCase'>
         <Header />
         <div id='musicHead'></div>
         <div id='musicTail'>
-          <div id='songlist'>{mapContent}</div>
+          <div id='songlist'>
+            <div id='album-title'></div>
+            {content.length > 1 &&
+              content.map(song => {
+                return (
+                  <div id='tracks' key={song.trackNumber}>
+                    {song.trackName}
+                  </div>
+                );
+              })}
+          </div>
           <div id=' albulm-grid'></div>
         </div>
       </div>
