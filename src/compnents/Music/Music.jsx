@@ -9,6 +9,11 @@ class Music extends Component {
 
     this.state = {};
   }
+  minsSeconds = ms => {
+    var minutes = Math.floor(ms / 60000);
+    var seconds = ((ms % 60000) / 1000).toFixed(0);
+    return minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
+  };
 
   render() {
     const { content } = this.props;
@@ -24,9 +29,11 @@ class Music extends Component {
             <div id='album-title'></div>
             {content.length > 1 &&
               content.map(song => {
+                const trackTime = this.minsSeconds(song.trackTimeMillis);
                 return (
                   <div id='tracks' key={song.trackNumber}>
                     {song.trackName}
+                    {trackTime}
                   </div>
                 );
               })}
