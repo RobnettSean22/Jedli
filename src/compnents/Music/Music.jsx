@@ -34,6 +34,10 @@ class Music extends Component {
                   <div id='tracks' key={song.trackNumber}>
                     {song.trackName}
                     {trackTime}
+                    <audio controls src={song.previewUrl}>
+                      Your browser does not support the
+                      <code>audio</code> element.
+                    </audio>
                   </div>
                 );
               })}
