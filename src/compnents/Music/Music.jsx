@@ -7,14 +7,12 @@ class Music extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      loading: true
-    };
+    this.state = {};
   }
 
   render() {
     const { content } = this.props;
-    const { loading } = this.state;
+
     console.log(content);
 
     return (
@@ -33,7 +31,17 @@ class Music extends Component {
                 );
               })}
           </div>
-          <div id=' albulm-grid'></div>
+
+          <div id='alblum-grid'>
+            <img
+              src='https://is4-ssl.mzstatic.com/image/thumb/Music113/v4/49/95/d6/4995d64d-1b1b-e880-1c0e-29fc5b61ba85/source/100x100bb.jpg'
+              alt=''
+            />
+            <img
+              src='https://is2-ssl.mzstatic.com/image/thumb/Music124/v4/7a/80/7e/7a807e03-9702-31dc-4d0f-055ca612a231/source/100x100bb.jpg'
+              alt=''
+            />
+          </div>
         </div>
       </div>
     );

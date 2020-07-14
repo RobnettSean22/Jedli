@@ -21,7 +21,7 @@
       flex-direction: column;
       justify-content: flex-start;
       align-items: center;
-      width: 60%;
+      width: 55%;
       height: 100%;
       #album-title {
         width: 100%;
@@ -35,14 +35,15 @@
         border-bottom: 1px solid white;
       }
     }
-    #album-grid {
-      width: 40%;
+    #alblum-grid {
+      width: 45%;
       height: 100%;
       display: grid;
-      grid-template-columns: 100px 50px 100px;
-      grid-template-rows: 80px auto 80px;
-      column-gap: 10px;
-      row-gap: 15px;
+      justify-content: center;
+      align-content: center;
+      grid-template-columns: 29% 29% 29%;
+      grid-template-rows: 30% 30% 30%;
+      gap: 3% 3%;
     }
   }
 }

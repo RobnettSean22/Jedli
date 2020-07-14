@@ -13,30 +13,32 @@ class App extends Component {
     super(props);
 
     this.state = {
-      music: ""
+      itunesMusic: "",
+      soundCloudMusic: ""
     };
   }
   componentDidMount() {
-    this.arival();
+    this.itunes();
   }
 
-  async arival() {
+  async itunes() {
     const res = await axios.get(
       `https://itunes.apple.com/search?term=JedLi&country=JP`
     );
     const { data } = await res;
+    console.log(res.data);
     const filterMusic = await data.results.filter(specArtist => {
       return specArtist.artistId === 1492578733;
     });
     this.setState({
-      music: filterMusic
+      itunesMusic: filterMusic
     });
   }
 
   render() {
-    const { music } = this.state;
+    const { itunesMusic, soundCloudMusic } = this.state;
 
-    console.log(music);
+    console.log(soundCloudMusic);
     return (
       <div>
         <div id='tiled'>
@@ -45,7 +47,7 @@ class App extends Component {
               exact
               path='/'
               exact
-              render={() => <Music content={music} />}
+              render={() => <Music content={itunesMusic} />}
             />
             <Route exact path='/lyrics' component={Lyrics} />
             <Route exact path='/events' component={Events} />
