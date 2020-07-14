@@ -14,7 +14,20 @@ class Music extends Component {
     var seconds = ((ms % 60000) / 1000).toFixed(0);
     return minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
   };
-
+  // playButton = (trackNum, url) => {
+  //   if (trackNum) {
+  //     return (
+  //       <audio src={url}>
+  //         Your browser does not support the
+  //         <code>audio</code> element.
+  //       </audio>
+  //     );
+  //   }
+  // };
+  playButton = y => {
+    var x = document.getElementById(y);
+    x.play();
+  };
   render() {
     const { content } = this.props;
 
@@ -30,13 +43,17 @@ class Music extends Component {
             {content.length > 1 &&
               content.map(song => {
                 const trackTime = this.minsSeconds(song.trackTimeMillis);
+                const newCredentials = song.trackName.replace(/\s/g, "");
                 return (
                   <div id='tracks' key={song.trackNumber}>
                     {song.trackName}
                     {trackTime}
-                    <audio controls src={song.previewUrl}>
+                    <button
+                      onClick={e => this.playButton(newCredentials)}
+                    ></button>
+                    <audio id={newCredentials} src={song.previewUrl}>
                       Your browser does not support the
-                      <code>audio</code> element.
+                      <code></code> element.
                     </audio>
                   </div>
                 );
