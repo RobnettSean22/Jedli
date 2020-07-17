@@ -2,32 +2,40 @@ import React, { Component } from "react";
 import Header from "../Header/Header";
 import "./Music.scss";
 import { withRouter } from "react-router-dom";
-
+import AudioControls from "../AudioControls";
 class Music extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {};
+    this.state = {
+      flipSwitch: 1
+    };
   }
   minsSeconds = ms => {
     var minutes = Math.floor(ms / 60000);
     var seconds = ((ms % 60000) / 1000).toFixed(0);
     return minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
   };
-  // playButton = (trackNum, url) => {
-  //   if (trackNum) {
-  //     return (
-  //       <audio src={url}>
-  //         Your browser does not support the
-  //         <code>audio</code> element.
-  //       </audio>
-  //     );
-  //   }
-  // };
+
   playButton = y => {
     var x = document.getElementById(y);
     x.play();
   };
+  stopButton = y => {
+    var x = document.getElementById(y);
+    x.pause();
+  };
+  pauseTrigger = () => {
+    this.setState({
+      flipSwitch: 3
+    });
+  };
+  playTrigger = () => {
+    this.setState({
+      flipSwitch: 1
+    });
+  };
+
   render() {
     const { content } = this.props;
 
@@ -44,13 +52,20 @@ class Music extends Component {
               content.map(song => {
                 const trackTime = this.minsSeconds(song.trackTimeMillis);
                 const newCredentials = song.trackName.replace(/\s/g, "");
+
                 return (
                   <div id='tracks' key={song.trackNumber}>
                     {song.trackName}
                     {trackTime}
-                    <button
-                      onClick={e => this.playButton(newCredentials)}
-                    ></button>
+
+                    <AudioControls
+                      play={this.playButton}
+                      stop={this.stopButton}
+                      pauseTrig={this.pauseTrigger}
+                      playTrig={this.playTrigger}
+                      switch={this.state.flipSwitch}
+                      identify={newCredentials}
+                    />
                     <audio id={newCredentials} src={song.previewUrl}>
                       Your browser does not support the
                       <code></code> element.

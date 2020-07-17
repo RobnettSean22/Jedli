@@ -33,6 +33,9 @@
         overflow-x: hidden;
         overflow-y: auto;
         border-bottom: 1px solid white;
+        .paused {
+          display: none;
+        }
       }
     }
     #alblum-grid {
