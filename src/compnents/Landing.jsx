@@ -1,22 +1,16 @@
 import React, { useState, useEffect } from "react";
-import HomeImg from "../assests/jedfront.jpg";
-import Styles from "styled-components";
+import HomeImg from "../assests/jedfront_cut.jpg";
+import styled from "styled-components";
 
-const Background = Styles.div`
-width:100vw;
-height:100vh;
-img{
-    width:1366px;
-    height:768px;
-}
-
+const Background = styled.div`
+  width: 100vw;
+  height: 100vh;
+  background-image: url(${HomeImg});
+  background-repeat: no-repeat;
+  background-size: cover;
 `;
 
 const Landing = props => {
-  return (
-    <Background>
-      <img src={HomeImg} alt='Image of Jedli' />
-    </Background>
-  );
+  return <Background></Background>;
 };
 export default Landing;
