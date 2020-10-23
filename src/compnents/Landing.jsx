@@ -10,7 +10,21 @@ const Background = styled.div`
   background-size: cover;
 `;
 
+const ShadowCase = styled.div`
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    0deg,
+    rgba(66, 32, 3, 0.57) 0%,
+    rgba(156, 63, 6, 0.6) 100%
+  );
+`;
+
 const Landing = props => {
-  return <Background></Background>;
+  return (
+    <Background>
+      <ShadowCase></ShadowCase>
+    </Background>
+  );
 };
 export default Landing;
