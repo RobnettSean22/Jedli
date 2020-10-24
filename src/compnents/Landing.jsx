@@ -109,7 +109,7 @@ const Landing = props => {
       <ShadowCase>
         <Head>
           <ul>
-            <h1>Music</h1>
+            <h1 onClick={e => props.history.push("/music/")}>Music</h1>
             <h1>Videos</h1>
             <h1>Events</h1>
           </ul>

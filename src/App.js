@@ -1,13 +1,17 @@
 import React from "react";
 import { Switch, Route } from "react-router";
-import axios from "axios";
-
 import Landing from "./compnents/Landing";
+import Music from "./compnents/Music";
+
+import axios from "axios";
 
 const App = props => {
   return (
     <>
-      <Landing />
+      <Switch>
+        <Route exact path='/' component={Landing} />
+        <Route exact path='music' component={Music} />
+      </Switch>
     </>
   );
 };
