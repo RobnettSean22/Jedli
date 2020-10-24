@@ -10,7 +10,7 @@ const App = props => {
     <>
       <Switch>
         <Route exact path='/' component={Landing} />
-        <Route exact path='music' component={Music} />
+        <Route exact path='/music/' component={Music} />
       </Switch>
     </>
   );
