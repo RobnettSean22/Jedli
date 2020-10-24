@@ -9,11 +9,7 @@ import Facebook from "../assests/facebook.png";
 import Spotify from "../assests/spotify.png";
 import Instagram from "../assests/instagram.png";
 import Twitter from "../assests/twitter.png";
-import AppleCream from "../assests/apple_cream.png";
-import FacebookCream from "../assests/facebook_cream.png";
-import SpotifyCream from "../assests/spotify_cream.png";
-import InstagramCream from "../assests/instagram_cream.png";
-import TwitterCream from "../assests/twitter_cream.png";
+
 import styled from "styled-components";
 
 const Background = styled.div`
@@ -29,8 +25,8 @@ const ShadowCase = styled.div`
   height: 100%;
   background: linear-gradient(
     0deg,
-    rgba(66, 32, 3, 0.57) 0%,
-    rgba(156, 63, 6, 0.6) 100%
+    rgba(66, 33, 3, 0.57) 0%,
+    rgba(156, 66, 6, 0.6) 100%
   );
   display: flex;
   flex-direction: column;
@@ -38,22 +34,29 @@ const ShadowCase = styled.div`
 
 const Head = styled.div`
   width: 100%;
-  height: 8.5%;
+  height: 4.5%;
   display: flex;
   justify-content: flex-start;
-  align-items: center;
+  align-items: flex-start;
+
   ul {
-    li {
+    h1 {
       display: inline;
       color: #e6dfd5;
-      margin: 5px;
+      margin: 23.5px;
+      font-family: "Grenze Gotisch", cursive;
+      letter-spacing: 3px;
+      font-size: 24px;
+      &:hover {
+        cursor: pointer;
+      }
     }
   }
 `;
 
 const LogoPlacement = styled.div`
   width: 100%;
-  height: 83%;
+  height: 91%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -79,7 +82,7 @@ const Orange = styled.img`
 `;
 const Foot = styled.div`
   width: 100%;
-  height: 8.5%;
+  height: 4.5%;
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
@@ -99,7 +102,6 @@ const Foot = styled.div`
     }
   }
 `;
-const OrangeSocialIcon = styled.img``;
 
 const Landing = props => {
   return (
@@ -107,9 +109,9 @@ const Landing = props => {
       <ShadowCase>
         <Head>
           <ul>
-            <li>Music</li>
-            <li>Video</li>
-            <li>Events</li>
+            <h1>Music</h1>
+            <h1>Videos</h1>
+            <h1>Events</h1>
           </ul>
         </Head>
         <LogoPlacement>
@@ -120,19 +122,19 @@ const Landing = props => {
         <Foot>
           <ul>
             <li>
-              <OrangeSocialIcon src={Facebook} alt='Apple Icon' />
+              <img src={Facebook} alt='Apple Icon' />
             </li>
             <li>
-              <OrangeSocialIcon src={Twitter} alt='Twitter Icon' />
+              <img src={Twitter} alt='Twitter Icon' />
             </li>
             <li>
-              <OrangeSocialIcon src={Instagram} alt='Instagram Icon' />
+              <img src={Instagram} alt='Instagram Icon' />
             </li>
             <li>
-              <OrangeSocialIcon src={Apple} alt='Apple Icon' />
+              <img src={Apple} alt='Apple Icon' />
             </li>
             <li>
-              <OrangeSocialIcon src={Spotify} alt='Spotify Icon' />
+              <img src={Spotify} alt='Spotify Icon' />
             </li>
           </ul>
         </Foot>
