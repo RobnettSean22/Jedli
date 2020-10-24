@@ -4,11 +4,16 @@ import WhiteLogo from "../assests/jedli_logo_white.png";
 import OrangeLogo from "../assests/jedli_logo_orange.png";
 import GreenLogo from "../assests/jedli_logo_green.png";
 import Apple from "../assests/apple.png";
-import Youtube from "../assests/youtube.png";
+
 import Facebook from "../assests/facebook.png";
 import Spotify from "../assests/spotify.png";
 import Instagram from "../assests/instagram.png";
 import Twitter from "../assests/twitter.png";
+import AppleCream from "../assests/apple_cream.png";
+import FacebookCream from "../assests/facebook_cream.png";
+import SpotifyCream from "../assests/spotify_cream.png";
+import InstagramCream from "../assests/instagram_cream.png";
+import TwitterCream from "../assests/twitter_cream.png";
 import styled from "styled-components";
 
 const Background = styled.div`
@@ -77,18 +82,24 @@ const Foot = styled.div`
   height: 8.5%;
   display: flex;
   justify-content: flex-end;
-  align-items: center;
+  align-items: flex-end;
   ul {
+    margin-bottom: 1%;
     li {
       display: inline;
-      margin: 5px;
+      margin: 19px;
       img {
-        width: 28px;
-        height: 28px;
+        width: 16px;
+        height: 16px;
+        &:hover {
+          filter: hue-rotate(90deg);
+          cursor: pointer;
+        }
       }
     }
   }
 `;
+const OrangeSocialIcon = styled.img``;
 
 const Landing = props => {
   return (
@@ -109,19 +120,19 @@ const Landing = props => {
         <Foot>
           <ul>
             <li>
-              <img src={Facebook} alt='Apple Icon' />
+              <OrangeSocialIcon src={Facebook} alt='Apple Icon' />
             </li>
             <li>
-              <img src={Twitter} alt='Twitter Icon' />
+              <OrangeSocialIcon src={Twitter} alt='Twitter Icon' />
             </li>
             <li>
-              <img src={Instagram} alt='Instagram Icon' />
+              <OrangeSocialIcon src={Instagram} alt='Instagram Icon' />
             </li>
             <li>
-              <img src={Apple} alt='Apple Icon' />
+              <OrangeSocialIcon src={Apple} alt='Apple Icon' />
             </li>
             <li>
-              <img src={Spotify} alt='Spotify Icon' />
+              <OrangeSocialIcon src={Spotify} alt='Spotify Icon' />
             </li>
           </ul>
         </Foot>
