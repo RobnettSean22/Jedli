@@ -4,7 +4,6 @@ import WhiteLogo from "../assests/jedli_logo_white.png";
 import OrangeLogo from "../assests/jedli_logo_orange.png";
 import GreenLogo from "../assests/jedli_logo_green.png";
 import Apple from "../assests/apple.png";
-
 import Facebook from "../assests/facebook.png";
 import Spotify from "../assests/spotify.png";
 import Instagram from "../assests/instagram.png";
