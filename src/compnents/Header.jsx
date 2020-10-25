@@ -16,12 +16,11 @@ const NavStation = styled.div`
     rgba(153, 63, 6, 0.9) 100%
   );
   img {
-    width: 112px;
-    height: 80px;
-    position: absolute;
-    top: -2.2%;
-    left: 0;
+    &:hover {
+      cursor: pointer;
+    }
   }
+
   ul {
     h1 {
       display: inline;
@@ -36,14 +35,38 @@ const NavStation = styled.div`
     }
   }
 `;
+const White = styled.img`
+  width: 112px;
+  height: 80px;
+  position: absolute;
+  top: -2%;
+  left: -1px;
+`;
+const Orange = styled.img`
+  width: 112px;
+  height: 80px;
+  position: absolute;
+  top: -1.9%;
+  left: -1px;
+`;
+const Green = styled.img`
+  width: 112px;
+  height: 80px;
+  position: absolute;
+  top: -2%;
+  left: 0;
+`;
 const Header = props => {
+  const homePage = () => {
+    props.history.push("/");
+  };
   return (
     <NavStation>
-      <img src={WhiteLogo} alt='logo' />
-      <img src={OrangeLogo} alt='logo' />
-      <img src={GreenLogo} alt='logo' />
+      <White onclick={e => homePage()} src={WhiteLogo} alt='logo' />
+      <Orange onclick={e => homePage()} src={OrangeLogo} alt='logo' />
+      <Green onclick={e => homePage()} src={GreenLogo} alt='logo' />
       <ul>
-        <h1 onClick={e => props.history.push("/music/")}>Music</h1>
+        <h1>Music</h1>
         <h1>Videos</h1>
         <h1>Events</h1>
       </ul>

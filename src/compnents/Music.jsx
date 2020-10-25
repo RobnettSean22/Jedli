@@ -46,14 +46,14 @@ const Overlay = styled.span`
     vertical-align: middle;
   }
   &:before {
-    content: "";
+    content: "Hello";
     border-radius: 33px;
     position: absolute;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    background: rgba(29, 29, 29, 0.82);
+    background: rgba(29, 29, 29, 0.81);
     opacity: 0;
     transition: 0.5s ease;
   }
