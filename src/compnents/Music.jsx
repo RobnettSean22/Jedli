@@ -8,6 +8,9 @@ import styled from "styled-components";
 const Background = styled.div`
   width: 100vw;
   height: 100vh;
+  display: flex;
+  flex-direction: column;
+
   background-image: url(${Stars});
   background-repeat: no-repeat;
   background-size: cover;
