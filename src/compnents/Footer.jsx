@@ -29,40 +29,46 @@ const NavigationFoot = styled.div`
   }
 `;
 
-const Links = styled.a``;
+const Links = styled.a`
+  text-decoration: none;
+`;
 
 const Footer = props => {
   return (
     <NavigationFoot>
       <ul>
         <li>
-          <a>
+          <Links
+            href='https://www.facebook.com/jstjed/'
+            target='_blank'
+            rel='noopener noreferrer'
+          >
             <img src={Facebook} alt='Apple Icon' />
-          </a>
+          </Links>
         </li>
         <li>
-          <a>
+          <Links>
             <img src={Twitter} alt='Twitter Icon' />
-          </a>
+          </Links>
         </li>
         <li>
-          <a
+          <Links
             href='https://www.instagram.com/jstjed/'
             target='_blank'
             rel='noopener noreferrer'
           >
             <img src={Instagram} alt='Instagram Icon' />
-          </a>
+          </Links>
         </li>
         <li>
-          <a>
+          <Links>
             <img src={Apple} alt='Apple Icon' />
-          </a>
+          </Links>
         </li>
         <li>
-          <a>
+          <Links>
             <img src={Spotify} alt='Spotify Icon' />
-          </a>
+          </Links>
         </li>
       </ul>
     </NavigationFoot>
