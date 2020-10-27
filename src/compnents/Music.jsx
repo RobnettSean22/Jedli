@@ -36,7 +36,7 @@ const AlbumContainer = styled.div`
 
 const Music = props => {
   const [jedliMusic, setJedliMusic] = useState([]);
-
+  const [coverArt, setCoverArt] = useState([]);
   useEffect(() => {
     itunesMusic();
   }, []);
