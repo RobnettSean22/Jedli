@@ -30,19 +30,19 @@ export default App;
 //     this.itunes();
 //   }
 
-//   async itunes() {
-//     const res = await axios.get(
-//       `https://itunes.apple.com/search?term=JedLi&country=JP`
-//     );
-//     const { data } = await res;
-//     console.log(res.data);
-//     const filterMusic = await data.results.filter(specArtist => {
-//       return specArtist.artistId === 1492578733;
-//     });
-//     this.setState({
-//       itunesMusic: filterMusic
-//     });
-//   }
+// async itunes() {
+//   const res = await axios.get(
+//     `https://itunes.apple.com/search?term=JedLi&country=JP`
+//   );
+//   const { data } = await res;
+//   console.log(res.data);
+//   const filterMusic = await data.results.filter(specArtist => {
+//     return specArtist.artistId === 1492578733;
+//   });
+//   this.setState({
+//     itunesMusic: filterMusic
+//   });
+// }
 
 //   render() {
 //     const { itunesMusic, soundCloudMusic } = this.state;

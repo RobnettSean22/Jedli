@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Header from "../compnents/Header";
 import Footer from "../compnents/Footer";
+import AlbumCard from "../compnents/AlbumCard";
 import LucidCover from "../assests/lucid.jpg";
 import JourneyCover from "../assests/journey.jpg";
 import Stars from "../assests/stary_night.jpg";
@@ -31,49 +32,47 @@ const AlbumContainer = styled.div`
   gap: 0% 2.9%;
   justify-content: center;
   align-content: center;
-  img {
-    width: 100%;
-    height: 100%;
-    border-radius: 33px;
-    box-shadow: 7px 5px 12px 0 rgba(0, 0, 0, 0.62);
-  }
-`;
-const Overlay = styled.span`
-  position: relative;
-  display: inline-block;
-
-  img {
-    vertical-align: middle;
-  }
-  &:before {
-    content: "Hello";
-    border-radius: 33px;
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(29, 29, 29, 0.81);
-    opacity: 0;
-    transition: 0.5s ease;
-  }
-  &:hover::before {
-    opacity: 1;
-  }
 `;
 
 const Music = props => {
+  const [jedliMusic, setJedliMusic] = useState([]);
+
+  useEffect(() => {
+    itunesMusic();
+  }, []);
+
+  const itunesMusic = async () => {
+    const res = await axios.get(
+      `https://itunes.apple.com/search?term=JedLi&country=JP`
+    );
+    const { data } = await res;
+    console.log(res.data);
+    const filterMusic = await data.results.filter(specArtist => {
+      return specArtist.artistId === 1492578733;
+    });
+    setJedliMusic(filterMusic);
+  };
+  console.log(jedliMusic);
+
   return (
     <Background>
       <Shadow>
         <Header />
         <AlbumContainer>
-          <Overlay>
-            <img src={LucidCover} alt='Lucid album ' />
-          </Overlay>
-          <Overlay>
-            <img src={JourneyCover} alt='Journey to the Adventure album ' />
-          </Overlay>
+          {jedliMusic
+            .reduce((acc, current) => {
+              const x = acc.find(
+                item => item.collectionId === current.collectionId
+              );
+              if (!x) {
+                return acc.concat([current]);
+              } else {
+                return acc;
+              }
+            }, [])
+            .map(covers => {
+              return <AlbumCard albumInfo={covers} />;
+            })}
         </AlbumContainer>
         <Footer />
       </Shadow>
