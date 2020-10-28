@@ -2,8 +2,7 @@ import React, { useState, useEffect } from "react";
 import Header from "../compnents/Header";
 import Footer from "../compnents/Footer";
 import AlbumCard from "../compnents/AlbumCard";
-import LucidCover from "../assests/lucid.jpg";
-import JourneyCover from "../assests/journey.jpg";
+import { Link } from "react-router-dom";
 import Stars from "../assests/stary_night.jpg";
 import axios from "axios";
 import styled from "styled-components";
@@ -36,7 +35,7 @@ const AlbumContainer = styled.div`
 
 const Music = props => {
   const [jedliMusic, setJedliMusic] = useState([]);
-  const [coverArt, setCoverArt] = useState([]);
+
   useEffect(() => {
     itunesMusic();
   }, []);
@@ -71,7 +70,18 @@ const Music = props => {
               }
             }, [])
             .map(covers => {
-              return <AlbumCard albumInfo={covers} />;
+              const pathTitle = covers.collectionName.replace(/\s/g, "-");
+              return (
+                <Link
+                  key={covers.collectionId}
+                  to={{
+                    pathname: `/music/${pathTitle}`,
+                    state: { singleAlbumArt: covers, allJeliMusic: jedliMusic }
+                  }}
+                >
+                  <AlbumCard albumInfo={covers} />
+                </Link>
+              );
             })}
         </AlbumContainer>
         <Footer />
