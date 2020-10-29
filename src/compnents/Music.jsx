@@ -76,7 +76,7 @@ const Music = props => {
                   key={covers.collectionId}
                   to={{
                     pathname: `/music/${pathTitle}`,
-                    state: { singleAlbumArt: covers, allJeliMusic: jedliMusic }
+                    state: { singleAlbumArt: covers, allJedliMusic: jedliMusic }
                   }}
                 >
                   <AlbumCard albumInfo={covers} />
