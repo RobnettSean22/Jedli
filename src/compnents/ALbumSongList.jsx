@@ -36,11 +36,11 @@ const Albumsonglist = props => {
   const [musicData, setMusicData] = useState(
     props.location.state.allJedliMusic
   );
+
   const [singleAlbumTitles, setSingleAlbumTitles] = useState([]);
   const filtered = musicData.filter(items => {
     return items.collectionId === thumbnail.collectionId;
   });
-  setSingleAlbumTitles(filtered);
 
   console.log(filtered);
   console.log(props.location.state.allJedliMusic);
@@ -48,7 +48,13 @@ const Albumsonglist = props => {
     <Background>
       <Shadow>
         <Header />
-        <TitleListGrid>{}</TitleListGrid>
+        <TitleListGrid>
+          {filtered
+            .sort((a, b) => a.trackNumber - b.trackNumber)
+            .map(list => {
+              return <TitleList titles={list} />;
+            })}
+        </TitleListGrid>
         <Footer />
       </Shadow>
     </Background>

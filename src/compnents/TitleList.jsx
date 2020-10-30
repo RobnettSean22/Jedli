@@ -1,6 +1,6 @@
 import React from "react";
 
-const TitleList = props => {
+const TitleList = ({ titles }) => {
   return <></>;
 };
 
