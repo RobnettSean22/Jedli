@@ -28,6 +28,10 @@ const TitleListGrid = styled.div`
   grid-template-rows: 150px 150px 150px 150px 150px;
   gap: 0px 0px;
 `;
+const AlbumnInfoCapsule = styled.div`
+  width: 100%;
+  height: 50%;
+`;
 
 const Albumsonglist = props => {
   const [thumbnail, setThumbnail] = useState(
@@ -48,13 +52,16 @@ const Albumsonglist = props => {
     <Background>
       <Shadow>
         <Header />
-        <TitleListGrid>
-          {filtered
-            .sort((a, b) => a.trackNumber - b.trackNumber)
-            .map(list => {
-              return <TitleList titles={list} />;
-            })}
-        </TitleListGrid>
+        <AlbumnInfoCapsule>
+          <TitleListGrid>
+            {filtered
+              .sort((a, b) => a.trackNumber - b.trackNumber)
+              .map(list => {
+                return <TitleList titles={list} />;
+              })}
+          </TitleListGrid>
+          {thumbnail.artworkUrl100}
+        </AlbumnInfoCapsule>
         <Footer />
       </Shadow>
     </Background>
