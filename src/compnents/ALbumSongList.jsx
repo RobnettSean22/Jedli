@@ -12,12 +12,14 @@ const Background = styled.div`
   background-image: url(${Stars});
   background-repeat: no-repeat;
   background-size: cover;
+  overflow-y: hidden;
 `;
 const Shadow = styled.div`
     width: 100%;
     height: 100%;
     display:flex;
     flex-direction:column;
+    justify-content:space-between;
     background: linear-gradient( 0deg, rgba(66,32,3,0.57) 0%, rgba(16,14,13,0.74) 100% );
 }
 `;
@@ -30,7 +32,20 @@ const TitleListGrid = styled.div`
 `;
 const AlbumnInfoCapsule = styled.div`
   width: 100%;
-  height: 50%;
+  height: 62.6%;
+  position: absolute;
+  top: 90px;
+  display: flex;
+  justify-content: space-between;
+  background: yellow;
+  img {
+    width: 100px;
+    height: 100px;
+  }
+`;
+const AlbumCoverCase = styled.div`
+  width: 31.3%;
+  height: 90%;
 `;
 
 const Albumsonglist = props => {
@@ -60,7 +75,9 @@ const Albumsonglist = props => {
                 return <TitleList titles={list} />;
               })}
           </TitleListGrid>
-          {thumbnail.artworkUrl100}
+          <AlbumCoverCase>
+            <img src={thumbnail.artworkUrl100} alt='albumn cover art' />
+          </AlbumCoverCase>
         </AlbumnInfoCapsule>
         <Footer />
       </Shadow>
