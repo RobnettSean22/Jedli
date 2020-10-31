@@ -24,23 +24,30 @@ const Shadow = styled.div`
 }
 `;
 
-const TitleListGrid = styled.div`
-  display: grid;
-  grid-template-columns: 300px 300px;
-  grid-template-rows: 150px 150px 150px 150px 150px;
-  gap: 0px 0px;
-`;
 const AlbumnInfoCapsule = styled.div`
   width: 100%;
   height: 62.6%;
   position: absolute;
   top: 90px;
   display: flex;
-  justify-content: space-between;
-  background: rgb(21, 21, 21, 0.6);
+  justify-content: flex-end;
+  background: rgb(21, 21, 21, 0.5);
   border-top: 1px solid rgb(140, 126, 118);
   border-bottom: 1px solid rgb(140, 126, 118);
 `;
+
+const TitleListGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(6, 10%);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+
+  div {
+    border-bottom: 1px solid rgb(140, 126, 118);
+  }
+`;
+
 const AlbumCoverCase = styled.div`
   display: flex;
   justify-content: center;
@@ -48,10 +55,11 @@ const AlbumCoverCase = styled.div`
   width: 32.3%;
   height: 100%;
   img {
-    border: 1px solid #8c7e76;
     width: 428px;
     height: 428px;
     border-radius: 33px;
+    border: 1px solid rgb(140, 126, 118);
+    box-shadow: 2px 1px 12px 0 rgba(0, 0, 0, 0.62);
   }
 `;
 

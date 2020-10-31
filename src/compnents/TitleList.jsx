@@ -5,15 +5,18 @@ const TitlesContainer = styled.div`
   width: 100%;
   height: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
+  h1 {
+    font-size: 30px;
+  }
 `;
 
 const TitleList = ({ titles }) => {
   return (
     <TitlesContainer>
       {titles.trackNumber}
-      {titles.trackCensoredName}
+      <h1>{titles.trackCensoredName}</h1>
     </TitlesContainer>
   );
 };
