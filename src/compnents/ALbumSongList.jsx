@@ -38,13 +38,14 @@ const AlbumnInfoCapsule = styled.div`
 
 const TitleListGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(6, 10%);
+  /* grid-template-columns: repeat(2, 1fr); */
+  grid-template-rows: repeat(6, 15%);
   grid-column-gap: 0px;
   grid-row-gap: 0px;
-
-  div {
-    border-bottom: 1px solid rgb(140, 126, 118);
+  overflow-y: auto;
+  ::-webkit-scrollbar {
+    width: 0px;
+    background: transparent; /* make scrollbar transparent */
   }
 `;
 
