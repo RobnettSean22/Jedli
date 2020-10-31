@@ -37,15 +37,22 @@ const AlbumnInfoCapsule = styled.div`
   top: 90px;
   display: flex;
   justify-content: space-between;
-  background: yellow;
-  img {
-    width: 100px;
-    height: 100px;
-  }
+  background: rgb(21, 21, 21, 0.6);
+  border-top: 1px solid rgb(140, 126, 118);
+  border-bottom: 1px solid rgb(140, 126, 118);
 `;
 const AlbumCoverCase = styled.div`
-  width: 31.3%;
-  height: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 32.3%;
+  height: 100%;
+  img {
+    border: 1px solid #8c7e76;
+    width: 428px;
+    height: 428px;
+    border-radius: 33px;
+  }
 `;
 
 const Albumsonglist = props => {
