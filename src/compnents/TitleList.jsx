@@ -23,10 +23,15 @@ const TitlesContainer = styled.div`
 `;
 
 const TitleList = ({ titles }) => {
+  const getRepContents = titles.trackCensoredName.substring(25);
+  const shortName =
+    titles.trackCensoredName.length > 25
+      ? titles.trackCensoredName.replace(getRepContents, "...")
+      : titles.trackCensoredName;
   return (
     <TitlesContainer>
       <h2>{titles.trackNumber}</h2>
-      <h1>{titles.trackCensoredName}</h1>
+      <h1>{shortName}</h1>
     </TitlesContainer>
   );
 };
