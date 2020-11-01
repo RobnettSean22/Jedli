@@ -19,18 +19,29 @@ const Shadow = styled.div`
     height: 100%;
     display:flex;
     flex-direction:column;
-    justify-content:space-between;
+    justify-content:flex-start;
     background: linear-gradient( 0deg, rgba(66,32,3,0.57) 0%, rgba(16,14,13,0.74) 100% );
 }
+`;
+
+const AlbumTitle = styled.div`
+  width: 100%;
+  height: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  h1 {
+    color: white;
+  }
 `;
 
 const AlbumnInfoCapsule = styled.div`
   width: 100%;
   height: 62.6%;
-  position: absolute;
-  top: 90px;
+  /* position: absolute;
+  top: 90px; */
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   background: rgb(21, 21, 21, 0.5);
   border-top: 1px solid rgb(140, 126, 118);
   border-bottom: 1px solid rgb(140, 126, 118);
@@ -38,14 +49,16 @@ const AlbumnInfoCapsule = styled.div`
 
 const TitleListGrid = styled.div`
   display: grid;
-  /* grid-template-columns: repeat(2, 1fr); */
+  align-content: center;
+  grid-template-columns: repeat(2, 300px);
   grid-template-rows: repeat(6, 15%);
   grid-column-gap: 0px;
   grid-row-gap: 0px;
   overflow-y: auto;
+  margin-left: 15%;
   ::-webkit-scrollbar {
     width: 0px;
-    background: transparent; /* make scrollbar transparent */
+    background: transparent;
   }
 `;
 
@@ -83,6 +96,9 @@ const Albumsonglist = props => {
     <Background>
       <Shadow>
         <Header />
+        <AlbumTitle>
+          <h1>hello world</h1>
+        </AlbumTitle>
         <AlbumnInfoCapsule>
           <TitleListGrid>
             {filtered

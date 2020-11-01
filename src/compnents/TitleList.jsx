@@ -5,17 +5,33 @@ const TitlesContainer = styled.div`
   width: 100%;
   height: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
+`;
+const TrackNum = styled.div`
+  height: 100%;
+  width: 10%;
   h2 {
-    font-size: 25px;
+    font-size: 20px;
+    color: rgb(140, 126, 118);
   }
+`;
+
+const TrackTitle = styled.div`
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   h1 {
-    font-size: 25px;
+    font-size: 20px;
+    font-family: sawarabi;
     color: rgb(140, 126, 118);
     margin: 0;
-    text-align: center;
+
     &:hover {
+      font-size: 21px;
       color: #e6dfd5;
       cursor: pointer;
     }
@@ -30,8 +46,9 @@ const TitleList = ({ titles }) => {
       : titles.trackCensoredName;
   return (
     <TitlesContainer>
-      <h2>{titles.trackNumber}</h2>
-      <h1>{shortName}</h1>
+      <TrackTitle>
+        <h1>{shortName}</h1>
+      </TrackTitle>
     </TitlesContainer>
   );
 };
