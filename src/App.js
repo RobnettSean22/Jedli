@@ -3,8 +3,7 @@ import { Switch, Route } from "react-router";
 import Landing from "./compnents/Landing";
 import Music from "./compnents/Music";
 import AlbumSongList from "./compnents/AlbumSongList";
-
-import axios from "axios";
+import Lyrics from "./compnents/Lyrics";
 
 const App = props => {
   return (
@@ -13,6 +12,7 @@ const App = props => {
         <Route exact path='/' component={Landing} />
         <Route exact path='/music/' component={Music} />
         <Route strict path='/music/' component={AlbumSongList} />
+        <Route strict path='/lyrics/' component={Lyrics} />
       </Switch>
     </>
   );

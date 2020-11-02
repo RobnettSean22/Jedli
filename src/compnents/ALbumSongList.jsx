@@ -28,18 +28,22 @@ const AlbumTitle = styled.div`
   width: 100%;
   height: 10%;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-end;
+  align-items: flex-end;
+  background: rgb(21, 21, 21, 0.5);
+  border-top: 1px solid rgb(140, 126, 118);
   h1 {
     color: white;
+    margin: 0;
+    font-family: sawarabi;
   }
 `;
 
 const AlbumnInfoCapsule = styled.div`
   width: 100%;
-  height: 62.6%;
-  /* position: absolute;
-  top: 90px; */
+  height: 65.6%;
+  position: absolute;
+  top: 90px;
   display: flex;
   justify-content: space-between;
   background: rgb(21, 21, 21, 0.5);
@@ -64,15 +68,22 @@ const TitleListGrid = styled.div`
 
 const AlbumCoverCase = styled.div`
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
+
   width: 32.3%;
   height: 100%;
+  h1 {
+    font-family: sawarabi;
+    color: rgba(230, 223, 213);
+    margin: 1% 0% 2% 0%;
+  }
   img {
     width: 428px;
     height: 428px;
     border-radius: 33px;
-    border: 1px solid rgb(140, 126, 118);
+    border: 1px solid rgb(0, 103, 255);
     box-shadow: 2px 1px 12px 0 rgba(0, 0, 0, 0.62);
   }
 `;
@@ -91,14 +102,12 @@ const Albumsonglist = props => {
   });
 
   console.log(filtered);
-  console.log(props.location.state.allJedliMusic);
+
   return (
     <Background>
       <Shadow>
         <Header />
-        <AlbumTitle>
-          <h1>hello world</h1>
-        </AlbumTitle>
+
         <AlbumnInfoCapsule>
           <TitleListGrid>
             {filtered
@@ -108,6 +117,7 @@ const Albumsonglist = props => {
               })}
           </TitleListGrid>
           <AlbumCoverCase>
+            <h1>{thumbnail.collectionName}</h1>
             <img src={thumbnail.artworkUrl100} alt='albumn cover art' />
           </AlbumCoverCase>
         </AlbumnInfoCapsule>

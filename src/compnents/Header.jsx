@@ -24,7 +24,7 @@ const NavStation = styled.div`
   ul {
     h1 {
       display: inline;
-      color: #e6dfd5;
+      color: rgba(230, 223, 213);
       margin: 23.5px;
       font-family: "Grenze Gotisch", cursive;
       letter-spacing: 3px;

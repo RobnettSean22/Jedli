@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 const TitlesContainer = styled.div`
@@ -29,16 +30,21 @@ const TrackTitle = styled.div`
     font-family: sawarabi;
     color: rgb(140, 126, 118);
     margin: 0;
-
-    &:hover {
-      font-size: 21px;
-      color: #e6dfd5;
-      cursor: pointer;
+    a {
+      text-decoration: none;
+      color: rgb(140, 126, 118);
+      &:hover {
+        font-size: 21px;
+        color: #e6dfd5;
+        cursor: pointer;
+      }
     }
   }
 `;
 
 const TitleList = ({ titles }) => {
+  const urlPathAlbumn = titles.collectionName.replace(/\s/g, "-");
+  const urlPathSong = titles.trackCensoredName.replace(/\s/g, "-");
   const getRepContents = titles.trackCensoredName.substring(25);
   const shortName =
     titles.trackCensoredName.length > 25
@@ -47,7 +53,16 @@ const TitleList = ({ titles }) => {
   return (
     <TitlesContainer>
       <TrackTitle>
-        <h1>{shortName}</h1>
+        <h1>
+          <Link
+            to={{
+              pathname: `/lyrics/${urlPathSong}`,
+              state: { music: titles }
+            }}
+          >
+            {shortName}
+          </Link>
+        </h1>
       </TrackTitle>
     </TitlesContainer>
   );
