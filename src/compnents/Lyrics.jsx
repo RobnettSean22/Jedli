@@ -54,25 +54,37 @@ const AlbumnSongs = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  border-right: 1px solid rgb(140, 126, 118);
+  border-left: 1px solid rgb(140, 126, 118);
   img {
     width: 184px;
     height: 184px;
+    border-radius: 33px;
   }
 `;
 
 const AlbumTitle = styled.div`
   width: 100%;
-  height: 100px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  h1 {
+    font-size: 16px;
+    margin: 0;
+  }
 `;
 const SongTitleList = styled.div`
   display: grid;
-  grid-template-columns: repeat(1, 250px);
-  grid-template-rows: repeat(6, 34%);
+  grid-template-columns: repeat(1, 224px);
+  grid-template-rows: repeat(6, 40px);
   grid-column-gap: 0px;
   grid-row-gap: 0px;
-  div {
-    width: 100%;
-    height: 100%;
+
+  h1 {
+    font-size: 14px;
+    margin: 0;
   }
 `;
 const Lyrics = props => {
@@ -141,11 +153,13 @@ const Lyrics = props => {
           </WrittenLyrics>
           <AlbumnSongs>
             <img src={JTA} alt='album art' />
-            <AlbumTitle>Journey to the Adventure</AlbumTitle>
+            <AlbumTitle>
+              <h1>Journey to the Adventure</h1>
+            </AlbumTitle>
 
             <SongTitleList>
               {music.map(sing => {
-                return <div>{sing.trackName}</div>;
+                return <h1>{sing.trackName}</h1>;
               })}
             </SongTitleList>
           </AlbumnSongs>
