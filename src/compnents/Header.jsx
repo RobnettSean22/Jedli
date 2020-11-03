@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink, Link } from "react-router-dom";
 import WhiteLogo from "../assests/jedli_logo_white.png";
 import OrangeLogo from "../assests/jedli_logo_orange.png";
 import GreenLogo from "../assests/jedli_logo_green.png";
@@ -6,7 +7,7 @@ import styled from "styled-components";
 
 const NavStation = styled.div`
   width: 100%;
-  height: 5.5%;
+  height: 4.8%;
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -22,13 +23,14 @@ const NavStation = styled.div`
   }
 
   ul {
-    h1 {
+    a {
       display: inline;
       color: rgba(230, 223, 213);
       margin: 23.5px;
       font-family: "Grenze Gotisch", cursive;
       letter-spacing: 3px;
-      font-size: 24px;
+      font-size: 16px;
+      text-decoration: none;
       &:hover {
         cursor: pointer;
       }
@@ -57,18 +59,23 @@ const Green = styled.img`
   left: 0;
 `;
 const Header = props => {
-  const homePage = () => {
-    props.history.push("/");
-  };
   return (
     <NavStation>
-      <White onclick={e => homePage()} src={WhiteLogo} alt='logo' />
-      <Orange onclick={e => homePage()} src={OrangeLogo} alt='logo' />
-      <Green onclick={e => homePage()} src={GreenLogo} alt='logo' />
+      <Link to='/'>
+        <White src={WhiteLogo} alt='logo' />
+        <Orange src={OrangeLogo} alt='logo' />
+        <Green src={GreenLogo} alt='logo' />
+      </Link>
       <ul>
-        <h1>Music</h1>
-        <h1>Videos</h1>
-        <h1>Events</h1>
+        <NavLink exact to='/music'>
+          Music
+        </NavLink>
+        <NavLink exact to='/videos'>
+          Videos
+        </NavLink>
+        <NavLink exact to='/events'>
+          Events
+        </NavLink>
       </ul>
     </NavStation>
   );

@@ -5,6 +5,7 @@ import Footer from "./Footer";
 import Stars from "../assests/stary_night.jpg";
 import JTA from "../assests/journey.jpg";
 import styled from "styled-components";
+
 const Background = styled.div`
   width: 100vw;
   height: 100vh;
@@ -29,7 +30,7 @@ const LyricsCase = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: rgb(21, 21, 21, 0.5);
+  background: rgb(21, 21, 21, 0.3);
 `;
 
 const WrittenLyrics = styled.div`
@@ -50,18 +51,19 @@ const WrittenLyrics = styled.div`
 
 const AlbumSongs = styled.div`
   width: 18.3%;
-  height: 70.7%;
+  height: 76%;
   margin-right: 2.4%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: 1px solid rgb(140, 126, 118);
+  border: 1px solid rgb(140, 126, 118, 0.29);
+  border-radius: 10px;
 
   img {
     width: 184px;
     height: 184px;
     border-radius: 33px;
-    margin-top: 7px;
+    margin-top: 20px;
   }
 `;
 
@@ -86,10 +88,10 @@ const SongTitleList = styled.div`
   grid-template-rows: repeat(7, 43.5px);
   grid-column-gap: 0px;
   grid-row-gap: 0px;
-  border-left: 1px solid rgb(140, 126, 118);
-  border-right: 1px solid rgb(140, 126, 118);
-  border-top: 1px solid rgb(140, 126, 118);
-  margin-top: 5.5px;
+  border-left: 1px solid rgb(140, 126, 118, 0.3);
+  border-right: 1px solid rgb(140, 126, 118, 0.3);
+  border-top: 1px solid rgb(140, 126, 118, 0.3);
+  margin-top: 20px;
   div {
     display: flex;
     justify-content: center;
