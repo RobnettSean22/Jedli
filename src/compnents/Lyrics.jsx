@@ -28,6 +28,7 @@ const LyricsCase = styled.div`
   height: 100%;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   background: rgb(21, 21, 21, 0.5);
 `;
 
@@ -47,44 +48,61 @@ const WrittenLyrics = styled.div`
   }
 `;
 
-const AlbumnSongs = styled.div`
+const AlbumSongs = styled.div`
   width: 18.3%;
-  height: 100%;
+  height: 70.7%;
   margin-right: 2.4%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  border-right: 1px solid rgb(140, 126, 118);
-  border-left: 1px solid rgb(140, 126, 118);
+  border: 1px solid rgb(140, 126, 118);
+
   img {
     width: 184px;
     height: 184px;
     border-radius: 33px;
+    margin-top: 7px;
   }
 `;
 
 const AlbumTitle = styled.div`
-  width: 100%;
-  height: 60px;
+  width: 192px;
+  height: 18px;
   display: flex;
+  margin-top: 5.5px;
   justify-content: center;
   align-items: center;
   font-size: 20px;
   h1 {
     font-size: 16px;
+    font-family: sawarabi;
+    color: rgba(230, 223, 213);
     margin: 0;
   }
 `;
 const SongTitleList = styled.div`
   display: grid;
   grid-template-columns: repeat(1, 224px);
-  grid-template-rows: repeat(6, 40px);
+  grid-template-rows: repeat(7, 43.5px);
   grid-column-gap: 0px;
   grid-row-gap: 0px;
-
-  h1 {
-    font-size: 14px;
-    margin: 0;
+  border-left: 1px solid rgb(140, 126, 118);
+  border-right: 1px solid rgb(140, 126, 118);
+  border-top: 1px solid rgb(140, 126, 118);
+  margin-top: 5.5px;
+  div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    border-bottom: 1px solid rgb(140, 126, 118);
+    h1 {
+      font-size: 13px;
+      font-family: sawarabi;
+      color: rgba(230, 223, 213);
+      margin: 0;
+    }
   }
 `;
 const Lyrics = props => {
@@ -151,7 +169,7 @@ const Lyrics = props => {
               prepare to die This is music for you to be murdered by
             </p>
           </WrittenLyrics>
-          <AlbumnSongs>
+          <AlbumSongs>
             <img src={JTA} alt='album art' />
             <AlbumTitle>
               <h1>Journey to the Adventure</h1>
@@ -159,10 +177,14 @@ const Lyrics = props => {
 
             <SongTitleList>
               {music.map(sing => {
-                return <h1>{sing.trackName}</h1>;
+                return (
+                  <div>
+                    <h1>{sing.trackName}</h1>
+                  </div>
+                );
               })}
             </SongTitleList>
-          </AlbumnSongs>
+          </AlbumSongs>
         </LyricsCase>
       </Shadow>
     </Background>
