@@ -17,45 +17,74 @@ const VideoGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(1, 100%);
   grid-template-rows: repeat(1, 284px);
+`;
 
-  .hover14 figure {
+const VidCase = styled.div`
+  figure.effect-sarah {
+    background: #42b078;
+  }
+
+  figure.effect-sarah img {
+    width: 100%;
+    height: 284px;
+    width: -webkit-calc(100% + 20px);
+    width: calc(100% + 20px);
+    -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+    transition: opacity 0.35s, transform 0.35s;
+    -webkit-transform: translate3d(-10px, 0, 0);
+    transform: translate3d(-10px, 0, 0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+
+  figure.effect-sarah:hover img {
+    opacity: 0.4;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+
+  figure.effect-sarah figcaption {
+    text-align: left;
+  }
+
+  figure.effect-sarah h2 {
     position: relative;
+    overflow: hidden;
+    padding: 0.5em 0;
   }
-  .hover14 figure::before {
+
+  figure.effect-sarah h2::after {
     position: absolute;
-    top: 0;
-    left: -75%;
-    z-index: 2;
-    display: block;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: #fff;
     content: "";
-    width: 50%;
-    height: 100%;
-    background: -webkit-linear-gradient(
-      left,
-      rgba(255, 255, 255, 0) 0%,
-      rgba(255, 255, 255, 0.3) 100%
-    );
-    background: linear-gradient(
-      to right,
-      rgba(255, 255, 255, 0) 0%,
-      rgba(255, 255, 255, 0.3) 100%
-    );
-    -webkit-transform: skewX(-25deg);
-    transform: skewX(-25deg);
+    -webkit-transition: -webkit-transform 0.35s;
+    transition: transform 0.35s;
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
   }
-  .hover14 figure:hover::before {
-    -webkit-animation: shine 0.75s;
-    animation: shine 0.75s;
+
+  figure.effect-sarah:hover h2::after {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
   }
-  @-webkit-keyframes shine {
-    100% {
-      left: 125%;
-    }
+
+  figure.effect-sarah p {
+    padding: 1em 0;
+    opacity: 0;
+    -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+    transition: opacity 0.35s, transform 0.35s;
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
   }
-  @keyframes shine {
-    100% {
-      left: 125%;
-    }
+
+  figure.effect-sarah:hover p {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
   }
 `;
 
@@ -64,14 +93,21 @@ const Videos = props => {
     <Background>
       <Header />
       <VideoGrid>
-        <div class='hover14 column'>
-          <div>
-            <figure>
-              <img src={Smoke} alt='video thumb' />
+        <VidCase>
+          <h2>Sarah</h2>
+          <div class='grid'>
+            <figure class='effect-sarah'>
+              <img src={Smoke} alt='img13' />
+              <figcaption>
+                <h2>
+                  Free <span>Sarah</span>
+                </h2>
+
+                <a href='#'>View more</a>
+              </figcaption>
             </figure>
-            <span>Hover</span>
           </div>
-        </div>
+        </VidCase>
       </VideoGrid>
     </Background>
   );
