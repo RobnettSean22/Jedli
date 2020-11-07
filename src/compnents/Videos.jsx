@@ -19,51 +19,38 @@ const VideoGrid = styled.div`
   grid-template-rows: repeat(1, 284px);
 `;
 
-const VidCase = styled.div`
-  figure.effect-sarah {
-  }
-
-  figure.effect-sarah img {
+const Figs = styled.figure`
+  img {
     width: 100%;
-    height: 284px;
+    height: 100%;
 
-    transition: opacity 0.35s, transform 0.35s;
+    &:hover {
+      transform: scale(1.01);
+      transition-duration: 1s;
+      border-bottom: 1px solid white;
+    }
   }
-
-  figure.effect-sarah:hover img {
-    opacity: 1;
-    transform: scale(1.01);
-  }
-
-  figure.effect-sarah figcaption {
+  figcaption {
+    position: relative;
+    background: blue;
     text-align: center;
-    position: relative;
-    bottom: 180px;
-  }
-
-  figure.effect-sarah h2 {
-    position: relative;
-    overflow: hidden;
-    padding: 0.5em 0;
-  }
-
-  figure.effect-sarah h2::after {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 3px;
-    background: #fff;
-    content: "";
-    -webkit-transition: -webkit-transform 0.35s;
-    transition: transform 0.35s;
-    -webkit-transform: translate3d(-100%, 0, 0);
-    transform: translate3d(-100%, 0, 0);
-  }
-
-  figure.effect-sarah:hover h2::after {
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
+    bottom: 148px;
+    h2 {
+      font-family: sawarabi;
+      font-size: 31px;
+      margin: 0;
+    }
+    h2::after {
+      /* position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: #fff;
+      content: "";
+      transition: transform 0.35s;
+      transform: translate3d(-100%, 0, 0);
+    } */
   }
 `;
 
@@ -72,18 +59,14 @@ const Videos = props => {
     <Background>
       <Header />
       <VideoGrid>
-        <VidCase>
-          <div class='grid'>
-            <figure class='effect-sarah'>
-              <img src={Smoke} alt='img13' />
-              <figcaption>
-                <h2>
-                  Free <span>Sarah</span>
-                </h2>
-              </figcaption>
-            </figure>
-          </div>
-        </VidCase>
+        <Figs>
+          <img src={Smoke} alt='img13' />
+          <figcaption>
+            <h2>
+              Free <span>Sarah</span>
+            </h2>
+          </figcaption>
+        </Figs>
       </VideoGrid>
     </Background>
   );
