@@ -1,4 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import JTA from "../assests/journey.jpg";
+import Lucid from "../assests/lucid.jpg";
 import styled from "styled-components";
 
 const CardCase = styled.div`
@@ -33,11 +36,33 @@ const Card = styled.span`
     opacity: 1;
   }
 `;
-const AlbumCard = ({ albumInfo }) => {
-  return (
-    <Card key={albumInfo.collectionId}>
-      <img src={albumInfo.artworkUrl100} alt='album cover artwork' />
-    </Card>
-  );
+const AlbumCard = props => {
+  const [albumCovers, setAlbumCovers] = useState([
+    { id: 1, albumnArt: JTA },
+    { id: 2, albumnArt: Lucid }
+  ]);
+
+  return albumCovers.map(muse => {
+    return (
+      <Card key={muse.id}>
+        <img src={muse.albumnArt} alt='album cover artwork' />
+      </Card>
+    );
+  });
 };
+// const AlbumCard = ({ albumInfo }) => {
+//   const pathTitle = albumInfo.collectionName.replace(/\s/g, "-");
+//   return (
+//     <Card key={albumInfo.collectionId}>
+//       <Link
+//         key={albumInfo.collectionId}
+//         to={{
+//           pathname: `/music/${pathTitle}`
+//         }}
+//       >
+//         <img src={albumInfo.artworkUrl100} alt='album cover artwork' />
+//       </Link>
+//     </Card>
+//   );
+// };
 export default AlbumCard;

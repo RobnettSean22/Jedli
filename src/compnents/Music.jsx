@@ -26,8 +26,8 @@ const AlbumContainer = styled.div`
   width: 100%;
   height: 87%;
   display: grid;
-  grid-template-columns: 29.9% 29.9%;
-  grid-template-rows: 53.4%;
+  grid-template-columns: repeat(2, 408px);
+  grid-template-rows: 408px;
   gap: 0% 2.9%;
   justify-content: center;
   align-content: center;
@@ -58,7 +58,7 @@ const Music = props => {
       <Shadow>
         <Header />
         <AlbumContainer>
-          {jedliMusic
+          {/* {jedliMusic
             .reduce((acc, current) => {
               const x = acc.find(
                 item => item.collectionId === current.collectionId
@@ -70,19 +70,9 @@ const Music = props => {
               }
             }, [])
             .map(covers => {
-              const pathTitle = covers.collectionName.replace(/\s/g, "-");
-              return (
-                <Link
-                  key={covers.collectionId}
-                  to={{
-                    pathname: `/music/${pathTitle}`,
-                    state: { singleAlbumArt: covers, allJedliMusic: jedliMusic }
-                  }}
-                >
-                  <AlbumCard albumInfo={covers} />
-                </Link>
-              );
-            })}
+              return <AlbumCard albumInfo={covers} />;
+            })} */}
+          <AlbumCard />
         </AlbumContainer>
         <Footer />
       </Shadow>
