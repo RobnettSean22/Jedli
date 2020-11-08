@@ -10,7 +10,7 @@ const Background = styled.div`
   background-image: url(${Silo});
   background-repeat: no-repeat;
   background-size: cover;
-  overflow-y: hidden;
+  overflow-x: hidden;
 `;
 
 const VideoGrid = styled.div`
@@ -21,27 +21,48 @@ const VideoGrid = styled.div`
 `;
 
 const Figs = styled.figure`
+  background: black;
+  margin: 1% 0 0 0;
+  &:hover img {
+    opacity: 0.5;
+    transform: scale(1.02);
+    transition: opacity 500ms, transform 500ms ease-in-out;
+    cursor: pointer;
+  }
+
   img {
     width: 100%;
     height: 100%;
     transform: scale(1);
-
-    &:hover {
-      transform: scale(1.01);
-      transition: transform 500ms ease-in;
-      border-bottom: 1px solid white;
-    }
+    opacity: 0.85;
   }
+
   figcaption {
     position: relative;
     text-align: center;
     bottom: 148px;
     h2 {
       font-family: sawarabi;
-      font-size: 31px;
+      font-size: 46px;
       margin: 0;
       color: white;
     }
+    h2::after {
+      position: absolute;
+      opacity: 0;
+      bottom: -5px;
+      left: 30%;
+      width: 40%;
+      height: 6px;
+      background: rgb(10, 103, 196);
+      content: "";
+
+      transition: opacity 500ms ease-in-out;
+    }
+  }
+  &:hover h2::after {
+    opacity: 1;
+    transform: translate3d(0%, 0, 0);
   }
 `;
 
@@ -53,17 +74,7 @@ const Videos = props => {
         <Figs>
           <img src={Smoke} alt='img13' />
           <figcaption>
-            <h2>
-              Free <span>Sarah</span>
-            </h2>
-          </figcaption>
-        </Figs>
-        <Figs>
-          <img src={Smoke} alt='img13' />
-          <figcaption>
-            <h2>
-              Free <span>Sarah</span>
-            </h2>
+            <h2>Subtle Energy</h2>
           </figcaption>
         </Figs>
       </VideoGrid>
