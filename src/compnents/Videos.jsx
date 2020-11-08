@@ -16,41 +16,32 @@ const Background = styled.div`
 const VideoGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(1, 100%);
-  grid-template-rows: repeat(1, 284px);
+  grid-template-rows: repeat(2, 284px);
+  position: relative;
 `;
 
 const Figs = styled.figure`
   img {
     width: 100%;
     height: 100%;
+    transform: scale(1);
 
     &:hover {
       transform: scale(1.01);
-      transition-duration: 1s;
+      transition: transform 500ms ease-in;
       border-bottom: 1px solid white;
     }
   }
   figcaption {
     position: relative;
-    background: blue;
     text-align: center;
     bottom: 148px;
     h2 {
       font-family: sawarabi;
       font-size: 31px;
       margin: 0;
+      color: white;
     }
-    h2::after {
-      /* position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 3px;
-      background: #fff;
-      content: "";
-      transition: transform 0.35s;
-      transform: translate3d(-100%, 0, 0);
-    } */
   }
 `;
 
@@ -59,6 +50,14 @@ const Videos = props => {
     <Background>
       <Header />
       <VideoGrid>
+        <Figs>
+          <img src={Smoke} alt='img13' />
+          <figcaption>
+            <h2>
+              Free <span>Sarah</span>
+            </h2>
+          </figcaption>
+        </Figs>
         <Figs>
           <img src={Smoke} alt='img13' />
           <figcaption>
