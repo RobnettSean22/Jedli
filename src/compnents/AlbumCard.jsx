@@ -17,6 +17,7 @@ const Card = styled.span`
     height: 100%;
     background: rgba(29, 29, 29);
     border-radius: 33px;
+    box-shadow: 7px 5px 12px 0 rgba(0, 0, 0, 0.62);
     &:hover img {
       filter: blur(2px);
       opacity: 0.3;
@@ -34,21 +35,24 @@ const Card = styled.span`
       width: 100%;
       height: 100%;
       border-radius: 33px;
-      box-shadow: 7px 5px 12px 0 rgba(0, 0, 0, 0.62);
     }
     figcaption {
       position: absolute;
       bottom: 0;
+
       h2 {
         font-size: 35px;
         opacity: 0;
+        color: rgb(230, 223, 213);
+        font-family: "sawarabi";
+        margin-left: 20px;
       }
     }
   }
 `;
 const AlbumCard = props => {
   const [albumCovers, setAlbumCovers] = useState([
-    { id: 1, albumnArt: JTA, albumName: "Journey to The Adventure" },
+    { id: 1, albumnArt: JTA, albumName: "Journey To The Adventure" },
     { id: 2, albumnArt: Lucid, albumName: "Lucid" }
   ]);
 

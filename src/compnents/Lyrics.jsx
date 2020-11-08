@@ -77,7 +77,7 @@ const AlbumTitle = styled.div`
   font-size: 20px;
   h1 {
     font-size: 16px;
-    font-family: sawarabi;
+    font-family: "sawarabi";
     color: rgba(230, 223, 213);
     margin: 0;
   }

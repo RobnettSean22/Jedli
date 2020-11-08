@@ -11,11 +11,7 @@ const NavStation = styled.div`
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  background: linear-gradient(
-    190deg,
-    rgba(18, 9, 2, 0.9) 0%,
-    rgba(153, 63, 6, 0.9) 100%
-  );
+  background: rgba(153, 63, 6, 0.9) 100%;
   img {
     &:hover {
       cursor: pointer;

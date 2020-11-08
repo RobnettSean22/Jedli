@@ -23,8 +23,7 @@ const Shadow = styled.div`
     rgba(66, 32, 3, 0.57) 0%,
     rgba(16, 14, 13, 0.74) 100%
   );
-
-  backdrop-filter: blur(2px);
+  backdrop-filter: blur(3px);
 `;
 const AlbumContainer = styled.div`
   width: 100%;
