@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import Header from "../compnents/Header";
 import Footer from "../compnents/Footer";
 import AlbumCard from "../compnents/AlbumCard";
-import { Link } from "react-router-dom";
 import Stars from "../assests/stary_night.jpg";
 import axios from "axios";
 import styled from "styled-components";
@@ -17,10 +16,15 @@ const Background = styled.div`
   background-size: cover;
 `;
 const Shadow = styled.div`
-width: 100%;
-    height: 100%;
-    background: linear-gradient( 0deg, rgba(66,32,3,0.57) 0%, rgba(16,14,13,0.74) 100% );
-}
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    0deg,
+    rgba(66, 32, 3, 0.57) 0%,
+    rgba(16, 14, 13, 0.74) 100%
+  );
+
+  backdrop-filter: blur(2px);
 `;
 const AlbumContainer = styled.div`
   width: 100%;

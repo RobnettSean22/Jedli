@@ -12,40 +12,55 @@ const CardCase = styled.div`
 const Card = styled.span`
   position: relative;
   display: inline-block;
-
-  img {
-    vertical-align: middle;
+  figure {
     width: 100%;
     height: 100%;
+    background: rgba(29, 29, 29);
     border-radius: 33px;
-    box-shadow: 7px 5px 12px 0 rgba(0, 0, 0, 0.62);
-  }
-  &:before {
-    content: "Hello";
-    border-radius: 33px;
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(29, 29, 29, 0.81);
-    opacity: 0;
-    transition: 0.5s ease;
-  }
-  &:hover::before {
-    opacity: 1;
+    &:hover img {
+      filter: blur(2px);
+      opacity: 0.3;
+      transition: opacity 10ms ease-in;
+      cursor: pointer;
+    }
+    &:hover h2 {
+      opacity: 1;
+      transition: opacity 500ms ease-in;
+    }
+    img {
+      position: absolute;
+      vertical-align: middle;
+      opacity: 1;
+      width: 100%;
+      height: 100%;
+      border-radius: 33px;
+      box-shadow: 7px 5px 12px 0 rgba(0, 0, 0, 0.62);
+    }
+    figcaption {
+      position: absolute;
+      bottom: 0;
+      h2 {
+        font-size: 35px;
+        opacity: 0;
+      }
+    }
   }
 `;
 const AlbumCard = props => {
   const [albumCovers, setAlbumCovers] = useState([
-    { id: 1, albumnArt: JTA },
-    { id: 2, albumnArt: Lucid }
+    { id: 1, albumnArt: JTA, albumName: "Journey to The Adventure" },
+    { id: 2, albumnArt: Lucid, albumName: "Lucid" }
   ]);
 
   return albumCovers.map(muse => {
     return (
       <Card key={muse.id}>
-        <img src={muse.albumnArt} alt='album cover artwork' />
+        <figure>
+          <img src={muse.albumnArt} alt='album cover artwork' />
+          <figcaption>
+            <h2>{muse.albumName}</h2>
+          </figcaption>
+        </figure>
       </Card>
     );
   });
