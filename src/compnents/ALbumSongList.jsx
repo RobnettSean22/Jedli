@@ -4,7 +4,17 @@ import TitleList from "./TitleList";
 import Header from "./Header";
 import Footer from "./Footer";
 import Stars from "../assests/stary_night.jpg";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+
+const slide = keyframes`
+   from {
+    transform: translate(-1400px);
+  }
+
+  to {
+    transform: translate(0px);
+  }
+`;
 
 const Background = styled.div`
   width: 100vw;
@@ -93,12 +103,14 @@ const AlbumCoverCase = styled.div`
   }
   img {
     position: absolute;
+    left: 0;
     bottom: -20.5px;
     width: 428px;
     height: 428px;
     border-radius: 33px;
     /* border: 1px solid rgb(0, 103, 255); */
     box-shadow: 2px 1px 12px 0 rgba(0, 0, 0, 0.62);
+    animation: ${slide} 900ms 1 ease-in forwards;
   }
 `;
 
