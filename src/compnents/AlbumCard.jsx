@@ -52,19 +52,31 @@ const Card = styled.span`
 `;
 const AlbumCard = props => {
   const [albumCovers, setAlbumCovers] = useState([
-    { id: 1, albumnArt: JTA, albumName: "Journey To The Adventure" },
-    { id: 2, albumnArt: Lucid, albumName: "Lucid" }
+    { id: 1492953358, albumnArt: JTA, albumName: "Journey To The Adventure" },
+    { id: 1523221577, albumnArt: Lucid, albumName: "Lucid" }
   ]);
 
   return albumCovers.map(muse => {
+    const urlTitle = muse.albumName.replace(/\s/g, "-");
     return (
       <Card key={muse.id}>
-        <figure>
-          <img src={muse.albumnArt} alt='album cover artwork' />
-          <figcaption>
-            <h2>{muse.albumName}</h2>
-          </figcaption>
-        </figure>
+        <Link
+          to={{
+            pathname: `/music/${urlTitle}`,
+            state: {
+              collectionId: muse.id,
+              name: muse.albumName,
+              img: muse.albumnArt
+            }
+          }}
+        >
+          <figure>
+            <img src={muse.albumnArt} alt='album cover artwork' />
+            <figcaption>
+              <h2>{muse.albumName}</h2>
+            </figcaption>
+          </figure>
+        </Link>
       </Card>
     );
   });

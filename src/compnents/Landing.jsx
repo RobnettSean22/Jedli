@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import SubtleEnergy from "../assests/jedli_homepage_video.mp4";
+import SubtleEnergy from "../assests/jedli_homepage_video_lblue.mp4";
 import HomeImg from "../assests/jedfront_cut.jpg";
 import WhiteLogo from "../assests/jedli_logo_white.png";
 import OrangeLogo from "../assests/jedli_logo_orange.png";
@@ -51,21 +51,21 @@ const Head = styled.div`
   width: 100%;
   height: 4.5%;
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-around;
   align-items: flex-start;
 
-  ul {
-    a {
-      display: inline;
-      color: #e6dfd5;
-      margin: 23.5px;
-      font-family: "Grenze Gotisch", cursive;
-      letter-spacing: 3px;
-      font-size: 24px;
-      text-decoration: none;
-      &:hover {
-        cursor: pointer;
-      }
+  a {
+    color: #e6dfd5;
+    display: inline;
+    font-family: "Luckiest Guy", cursive;
+    margin-top: 1em;
+    font-size: 31px;
+    text-decoration: none;
+    &:hover {
+      opacity: 1;
+      cursor: pointer;
+      border-bottom: 1px solid white;
+      transition: border-bottom 200ms ease-in;
     }
   }
 `;
@@ -128,11 +128,9 @@ const Landing = props => {
         </video>
         <ShadowCase>
           <Head>
-            <ul>
-              <Link to='/music/'>Music</Link>
-              <Link to='/videos/'>Videos</Link>
-              <Link to='/events/'>Events</Link>
-            </ul>
+            <Link to='/music/'>Music</Link>
+            <Link to='/videos/'>Videos</Link>
+            <Link to='/events/'>Events</Link>
           </Head>
           <LogoPlacement>
             <White src={WhiteLogo} alt='white logo' />

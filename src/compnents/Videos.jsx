@@ -22,7 +22,7 @@ const VideoGrid = styled.div`
 
 const Figs = styled.figure`
   background: black;
-  margin: 1% 0 0 0;
+  margin: 1px 0 0 0;
   &:hover img {
     opacity: 0.5;
     transform: scale(1.02);

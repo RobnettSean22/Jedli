@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import TitleList from "./TitleList";
 import Header from "./Header";
 import Footer from "./Footer";
@@ -15,13 +16,16 @@ const Background = styled.div`
   overflow-y: hidden;
 `;
 const Shadow = styled.div`
-    width: 100%;
-    height: 100%;
-    display:flex;
-    flex-direction:column;
-    justify-content:flex-start;
-    background: linear-gradient( 0deg, rgba(66,32,3,0.57) 0%, rgba(16,14,13,0.74) 100% );
-}
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  background: linear-gradient(
+    0deg,
+    rgba(66, 32, 3, 0.57) 0%,
+    rgba(16, 14, 13, 0.74) 100%
+  );
 `;
 
 const AlbumTitle = styled.div`
@@ -89,36 +93,45 @@ const AlbumCoverCase = styled.div`
 `;
 
 const Albumsonglist = props => {
-  const [thumbnail, setThumbnail] = useState(
-    props.location.state.singleAlbumArt
-  );
-  const [musicData, setMusicData] = useState(
-    props.location.state.allJedliMusic
-  );
+  const [jedliMusic, setJedliMusic] = useState([]);
 
-  const [singleAlbumTitles, setSingleAlbumTitles] = useState([]);
-  const filtered = musicData.filter(items => {
-    return items.collectionId === thumbnail.collectionId;
-  });
+  const deconAlbum = props.location.state;
 
-  console.log(filtered);
+  useEffect(() => {
+    itunesMusic();
+  }, []);
+
+  const itunesMusic = async () => {
+    const res = await axios.get(
+      `https://itunes.apple.com/search?term=JedLi&country=JP`
+    );
+    const { data } = await res;
+    console.log(res.data);
+    const filterMusic = await data.results.filter(specArtist => {
+      return (
+        specArtist.artistId === 1492578733 &&
+        specArtist.collectionId === deconAlbum.collectionId
+      );
+    });
+    setJedliMusic(filterMusic);
+  };
+  console.log(jedliMusic);
 
   return (
     <Background>
       <Shadow>
         <Header />
-
         <AlbumnInfoCapsule>
           <TitleListGrid>
-            {filtered
+            {jedliMusic
               .sort((a, b) => a.trackNumber - b.trackNumber)
               .map(list => {
                 return <TitleList titles={list} />;
               })}
           </TitleListGrid>
           <AlbumCoverCase>
-            <h1>{thumbnail.collectionName}</h1>
-            <img src={thumbnail.artworkUrl100} alt='albumn cover art' />
+            <h1>{deconAlbum.name}</h1>
+            <img src={deconAlbum.img} alt='albumn cover art' />
           </AlbumCoverCase>
         </AlbumnInfoCapsule>
         <Footer />

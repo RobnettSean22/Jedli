@@ -37,44 +37,11 @@ const AlbumContainer = styled.div`
 `;
 
 const Music = props => {
-  const [jedliMusic, setJedliMusic] = useState([]);
-
-  useEffect(() => {
-    itunesMusic();
-  }, []);
-
-  const itunesMusic = async () => {
-    const res = await axios.get(
-      `https://itunes.apple.com/search?term=JedLi&country=JP`
-    );
-    const { data } = await res;
-    console.log(res.data);
-    const filterMusic = await data.results.filter(specArtist => {
-      return specArtist.artistId === 1492578733;
-    });
-    setJedliMusic(filterMusic);
-  };
-  console.log(jedliMusic);
-
   return (
     <Background>
       <Shadow>
         <Header />
         <AlbumContainer>
-          {/* {jedliMusic
-            .reduce((acc, current) => {
-              const x = acc.find(
-                item => item.collectionId === current.collectionId
-              );
-              if (!x) {
-                return acc.concat([current]);
-              } else {
-                return acc;
-              }
-            }, [])
-            .map(covers => {
-              return <AlbumCard albumInfo={covers} />;
-            })} */}
           <AlbumCard />
         </AlbumContainer>
         <Footer />

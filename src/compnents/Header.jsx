@@ -23,17 +23,20 @@ const NavStation = styled.div`
   }
 
   ul {
-    a {
+    .inactive {
       display: inline;
       color: rgba(230, 223, 213);
       margin: 23.5px;
-      font-family: "Grenze Gotisch", cursive;
-      letter-spacing: 3px;
-      font-size: 19px;
+      font-family: "Luckiest Guy", cursive;
+
+      font-size: 16px;
       text-decoration: none;
       &:hover {
         cursor: pointer;
       }
+    }
+    .active {
+      color: green;
     }
   }
 `;
@@ -67,13 +70,28 @@ const Header = props => {
         <Green src={GreenLogo} alt='logo' />
       </Link>
       <ul>
-        <NavLink exact to='/music'>
+        <NavLink
+          className='inactive'
+          activeClassName='acitve'
+          exact
+          to='/music'
+        >
           Music
         </NavLink>
-        <NavLink exact to='/videos'>
+        <NavLink
+          className='inactive'
+          activeClassName='acitve'
+          exact
+          to='/videos'
+        >
           Videos
         </NavLink>
-        <NavLink exact to='/events'>
+        <NavLink
+          className='inactive'
+          activeClassName='acitve'
+          exact
+          to='/events'
+        >
           Events
         </NavLink>
       </ul>
