@@ -7,11 +7,15 @@ import styled from "styled-components";
 
 const NavStation = styled.div`
   width: 100%;
-  height: 4.8%;
+  height: 5.9%;
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  background: rgba(153, 63, 6, 0.9) 100%;
+
+  border-bottom: 1px solid rgba(191, 78, 8);
+  &:hover {
+    background: rgba(191, 78, 8, 0.1) 100%;
+  }
   img {
     &:hover {
       cursor: pointer;
@@ -25,7 +29,7 @@ const NavStation = styled.div`
       margin: 23.5px;
       font-family: "Grenze Gotisch", cursive;
       letter-spacing: 3px;
-      font-size: 16px;
+      font-size: 19px;
       text-decoration: none;
       &:hover {
         cursor: pointer;

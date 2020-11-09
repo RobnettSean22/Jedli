@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import SubtleEnergy from "../assests/jedli_homepage_video.mp4";
 import HomeImg from "../assests/jedfront_cut.jpg";
 import WhiteLogo from "../assests/jedli_logo_white.png";
 import OrangeLogo from "../assests/jedli_logo_orange.png";
@@ -17,9 +19,23 @@ const Background = styled.div`
   background-image: url(${HomeImg});
   background-repeat: no-repeat;
   background-size: cover;
+  div {
+    width: 100%;
+    height: 100%;
+
+    video {
+      object-fit: cover;
+      width: 100vw;
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      left: 0;
+    }
+  }
 `;
 
 const ShadowCase = styled.div`
+  position: absolute;
   width: 100%;
   height: 100%;
   background: linear-gradient(
@@ -39,13 +55,14 @@ const Head = styled.div`
   align-items: flex-start;
 
   ul {
-    h1 {
+    a {
       display: inline;
       color: #e6dfd5;
       margin: 23.5px;
       font-family: "Grenze Gotisch", cursive;
       letter-spacing: 3px;
       font-size: 24px;
+      text-decoration: none;
       &:hover {
         cursor: pointer;
       }
@@ -105,39 +122,44 @@ const Foot = styled.div`
 const Landing = props => {
   return (
     <Background>
-      <ShadowCase>
-        <Head>
-          <ul>
-            <h1 onClick={e => props.history.push("/music/")}>Music</h1>
-            <h1>Videos</h1>
-            <h1>Events</h1>
-          </ul>
-        </Head>
-        <LogoPlacement>
-          <White src={WhiteLogo} alt='white logo' />
-          <Orange src={OrangeLogo} alt='orange logo' />
-          <Green src={GreenLogo} alt='green logo' />
-        </LogoPlacement>
-        <Foot>
-          <ul>
-            <li>
-              <img src={Facebook} alt='Apple Icon' />
-            </li>
-            <li>
-              <img src={Twitter} alt='Twitter Icon' />
-            </li>
-            <li>
-              <img src={Instagram} alt='Instagram Icon' />
-            </li>
-            <li>
-              <img src={Apple} alt='Apple Icon' />
-            </li>
-            <li>
-              <img src={Spotify} alt='Spotify Icon' />
-            </li>
-          </ul>
-        </Foot>
-      </ShadowCase>
+      <div>
+        <video muted autoPlay loop poster={HomeImg}>
+          <source src={SubtleEnergy} type='video/mp4' />
+        </video>
+        <ShadowCase>
+          <Head>
+            <ul>
+              <Link to='/music/'>Music</Link>
+              <Link to='/videos/'>Videos</Link>
+              <Link to='/events/'>Events</Link>
+            </ul>
+          </Head>
+          <LogoPlacement>
+            <White src={WhiteLogo} alt='white logo' />
+            <Orange src={OrangeLogo} alt='orange logo' />
+            <Green src={GreenLogo} alt='green logo' />
+          </LogoPlacement>
+          <Foot>
+            <ul>
+              <li>
+                <img src={Facebook} alt='Apple Icon' />
+              </li>
+              <li>
+                <img src={Twitter} alt='Twitter Icon' />
+              </li>
+              <li>
+                <img src={Instagram} alt='Instagram Icon' />
+              </li>
+              <li>
+                <img src={Apple} alt='Apple Icon' />
+              </li>
+              <li>
+                <img src={Spotify} alt='Spotify Icon' />
+              </li>
+            </ul>
+          </Foot>
+        </ShadowCase>
+      </div>
     </Background>
   );
 };
