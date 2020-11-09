@@ -6,15 +6,16 @@ import GreenLogo from "../assests/jedli_logo_green.png";
 import styled from "styled-components";
 
 const NavStation = styled.div`
+  position: absolute;
+  top: 0;
   width: 100%;
   height: 5.9%;
   display: flex;
   justify-content: flex-end;
   align-items: center;
-
-  border-bottom: 1px solid rgba(191, 78, 8);
+  background: rgba(240, 125, 10) 100%;
+  /* border-bottom: 1px solid rgba(191, 78, 8); */
   &:hover {
-    background: rgba(191, 78, 8, 0.1) 100%;
   }
   img {
     &:hover {
@@ -42,23 +43,23 @@ const NavStation = styled.div`
 `;
 const White = styled.img`
   width: 112px;
-  height: 80px;
+  height: 70px;
   position: absolute;
-  top: -2%;
+  top: -10px;
   left: -1px;
 `;
 const Orange = styled.img`
   width: 112px;
-  height: 80px;
+  height: 70px;
   position: absolute;
-  top: -1.9%;
+  top: -9px;
   left: -1px;
 `;
 const Green = styled.img`
   width: 112px;
-  height: 80px;
+  height: 70px;
   position: absolute;
-  top: -2%;
+  top: -10px;
   left: 0;
 `;
 const Header = props => {

@@ -20,12 +20,13 @@ const Shadow = styled.div`
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
   background: linear-gradient(
     0deg,
     rgba(66, 32, 3, 0.57) 0%,
     rgba(16, 14, 13, 0.74) 100%
   );
+  backdrop-filter: blur(3px);
 `;
 
 const AlbumTitle = styled.div`
@@ -45,14 +46,14 @@ const AlbumTitle = styled.div`
 
 const AlbumnInfoCapsule = styled.div`
   width: 100%;
-  height: 65.6%;
-  position: absolute;
-  top: 90px;
+  height: 51.6%;
+  /* top: 90px;
+  position: absolute; */
   display: flex;
   justify-content: space-between;
-  background: rgb(21, 21, 21, 0.5);
-  border-top: 1px solid rgb(140, 126, 118);
-  border-bottom: 1px solid rgb(140, 126, 118);
+  background: rgb(21, 21, 21, 0.7);
+  /* border-top: 1px solid rgb(140, 126, 118);
+  border-bottom: 1px solid rgb(140, 126, 118); */
 `;
 
 const TitleListGrid = styled.div`
@@ -71,14 +72,16 @@ const TitleListGrid = styled.div`
 `;
 
 const AlbumCoverCase = styled.div`
-  display: flex;
+  /* display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  align-items: center;
+  align-items: center; */
 
   width: 32.3%;
   height: 100%;
+
   h1 {
+    text-align: center;
     font-family: sawarabi;
     color: rgba(230, 223, 213);
     margin: 1% 0% 2% 0%;
