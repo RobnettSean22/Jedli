@@ -14,7 +14,7 @@ const NavStation = styled.div`
   justify-content: flex-end;
   align-items: center;
   background: rgba(240, 125, 10) 100%;
-  /* border-bottom: 1px solid rgba(191, 78, 8); */
+
   &:hover {
   }
   img {

@@ -51,9 +51,11 @@ const AlbumnInfoCapsule = styled.div`
   position: absolute; */
   display: flex;
   justify-content: space-between;
-  background: rgb(21, 21, 21, 0.7);
+  background: rgb(21, 21, 21, 0.9);
   /* border-top: 1px solid rgb(140, 126, 118);
   border-bottom: 1px solid rgb(140, 126, 118); */
+  border-top: 1px solid rgba(191, 78, 8);
+  border-bottom: 1px solid rgba(191, 78, 8);
 `;
 
 const TitleListGrid = styled.div`
@@ -72,25 +74,30 @@ const TitleListGrid = styled.div`
 `;
 
 const AlbumCoverCase = styled.div`
-  /* display: flex;
+  display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  align-items: center; */
 
-  width: 32.3%;
+  align-items: center;
+  position: relative;
+
+  width: 32%;
   height: 100%;
 
   h1 {
+    position: absolute;
     text-align: center;
     font-family: sawarabi;
     color: rgba(230, 223, 213);
-    margin: 1% 0% 2% 0%;
+    margin: 0 0% 2% 0%;
+    top: 0;
   }
   img {
+    position: absolute;
+    bottom: -20.5px;
     width: 428px;
     height: 428px;
     border-radius: 33px;
-    border: 1px solid rgb(0, 103, 255);
+    /* border: 1px solid rgb(0, 103, 255); */
     box-shadow: 2px 1px 12px 0 rgba(0, 0, 0, 0.62);
   }
 `;
