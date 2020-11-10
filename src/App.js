@@ -5,6 +5,7 @@ import Music from "./compnents/Music";
 import AlbumSongList from "./compnents/AlbumSongList";
 import Lyrics from "./compnents/Lyrics";
 import Videos from "./compnents/Videos";
+import Events from "./compnents/Events";
 
 const App = props => {
   return (
@@ -12,9 +13,10 @@ const App = props => {
       <Switch>
         <Route exact path='/' component={Landing} />
         <Route exact path='/music/' component={Music} />
-        <Route strict path='/music/' component={AlbumSongList} />
+        <Route path='/music/:' component={AlbumSongList} />
         <Route strict path='/lyrics/' component={Lyrics} />
         <Route exact path='/videos/' component={Videos} />
+        <Route exact path='/events/' component={Events} />
       </Switch>
     </>
   );
