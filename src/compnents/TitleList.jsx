@@ -1,6 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+
+// const visible = keyframes`
+//    from {
+//     opacity:0;
+//   }
+
+//   to {
+//    opacity:1;
+//   }
+// `;
 
 const TitlesContainer = styled.div`
   width: 100%;
@@ -30,6 +40,7 @@ const TrackTitle = styled.div`
     font-family: sawarabi;
     color: rgb(140, 126, 118);
     margin: 0;
+
     a {
       text-decoration: none;
       color: rgb(140, 126, 118);

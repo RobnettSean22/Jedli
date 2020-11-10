@@ -11,6 +11,9 @@ const Background = styled.div`
   background-repeat: no-repeat;
   background-size: cover;
   overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 `;
 
 const VideoGrid = styled.div`
@@ -18,11 +21,15 @@ const VideoGrid = styled.div`
   grid-template-columns: repeat(1, 100%);
   grid-template-rows: repeat(2, 284px);
   position: relative;
+
+  top: 45px;
+  margin-top: 1px;
 `;
 
 const Figs = styled.figure`
   background: black;
   margin: 1px 0 0 0;
+  overflow: hidden;
   &:hover img {
     opacity: 0.5;
     transform: scale(1.02);
