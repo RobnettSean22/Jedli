@@ -23,23 +23,38 @@ const TrackTitle = styled.div`
   height: 100%;
   width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
+`;
 
+const TrackNumContainer = styled.div`
+  height: 100%;
+  display: flex;
+  align-items: center;
   h1 {
     font-size: 20px;
-    font-family: sawarabi;
+    font-family: "sawarabi";
+    color: rgb(140, 126, 118);
+  }
+`;
+
+const SongLinkContainer = styled.div`
+  display: flex;
+  align-items: center;
+  margin-left: 25px;
+  width: 293 px;
+  height: 100%;
+  a {
+    text-decoration: none;
+    color: rgb(140, 126, 118);
+    font-size: 23px;
+    font-family: "sawarabi";
     color: rgb(140, 126, 118);
     margin: 0;
-
-    a {
-      text-decoration: none;
-      color: rgb(140, 126, 118);
-      &:hover {
-        font-size: 21px;
-        color: #e6dfd5;
-        cursor: pointer;
-      }
+    &:hover {
+      font-size: 24px;
+      color: #e6dfd5;
+      cursor: pointer;
     }
   }
 `;
@@ -55,7 +70,10 @@ const TitleList = ({ titles }) => {
   return (
     <TitlesContainer>
       <TrackTitle>
-        <h1>
+        <TrackNumContainer>
+          <h1>{titles.trackNumber}</h1>
+        </TrackNumContainer>
+        <SongLinkContainer>
           <Link
             to={{
               pathname: `/music/${urlPathAlbumn}/${urlPathSong}`,
@@ -64,7 +82,7 @@ const TitleList = ({ titles }) => {
           >
             {shortName}
           </Link>
-        </h1>
+        </SongLinkContainer>
       </TrackTitle>
     </TitlesContainer>
   );
