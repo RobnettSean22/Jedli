@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import { useParams } from "react-router-dom";
 import Header from "./Header";
 import Footer from "./Footer";
 import Stars from "../assests/stary_night.jpg";
@@ -123,13 +123,14 @@ const Lyrics = props => {
     { trackName: "Oh My God (Love for Me)" },
     { trackName: "Whatever We Want" }
   ]);
+  let { song } = useParams();
   return (
     <Background>
       <Shadow>
         <Header />
         <LyricsCase>
           <WrittenLyrics>
-            <h1>Acend</h1>
+            <h1>{song}</h1>
             <p>
               [Intro: Eminem] Yeah So I guess this is what it is, huh? Think
               it's obvious We ain't never gonna see eye to eye But it's funny As

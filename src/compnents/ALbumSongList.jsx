@@ -72,11 +72,12 @@ const TitleListGrid = styled.div`
   display: grid;
   align-content: center;
   grid-template-columns: repeat(2, 363px);
-  grid-template-rows: repeat(6, 15%);
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
+
+  grid-column-gap: 10px;
+  grid-row-gap: 24px;
   overflow-y: auto;
   margin-left: 13%;
+
   ::-webkit-scrollbar {
     width: 0px;
     background: transparent;

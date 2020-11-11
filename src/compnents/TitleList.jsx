@@ -9,14 +9,7 @@ const TitlesContainer = styled.div`
   display: flex;
   justify-content: flex-start;
   align-items: center;
-`;
-const TrackNum = styled.div`
-  height: 100%;
-  width: 10%;
-  h2 {
-    font-size: 20px;
-    color: rgb(140, 126, 118);
-  }
+  /* border-bottom: 1px solid white; */
 `;
 
 const TrackTitle = styled.div`
