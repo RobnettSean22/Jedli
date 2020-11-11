@@ -14,7 +14,7 @@ const NavigationFoot = styled.div`
   align-items: flex-end;
   position: absolute;
   bottom: 0;
-  background: rgba(0, 70, 235, 0.1);
+  background: rgba(21, 23, 38, 0.8);
   ul {
     margin-bottom: 4px;
     padding-left: 3px;
