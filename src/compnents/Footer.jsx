@@ -1,9 +1,9 @@
 import React from "react";
-import Apple from "../assests/apple.png";
-import Facebook from "../assests/facebook.png";
-import Spotify from "../assests/spotify.png";
-import Instagram from "../assests/instagram.png";
-import Twitter from "../assests/twitter.png";
+import Apple from "../assests/apple_cream.png";
+import Facebook from "../assests/facebook_cream.png";
+import Spotify from "../assests/spotify_cream.png";
+import Instagram from "../assests/instagram_cream.png";
+// import Twitter from "../assests/twitter.png";
 import styled from "styled-components";
 
 const NavigationFoot = styled.div`
@@ -14,8 +14,10 @@ const NavigationFoot = styled.div`
   align-items: flex-end;
   position: absolute;
   bottom: 0;
+  background: rgba(0, 70, 235, 0.1);
   ul {
-    margin-bottom: 1%;
+    margin-bottom: 4px;
+    padding-left: 3px;
     li {
       display: inline;
       margin: 19px;
@@ -46,11 +48,6 @@ const Footer = props => {
             rel='noopener noreferrer'
           >
             <img src={Facebook} alt='Apple Icon' />
-          </Links>
-        </li>
-        <li>
-          <Links>
-            <img src={Twitter} alt='Twitter Icon' />
           </Links>
         </li>
         <li>

@@ -5,11 +5,11 @@ import HomeImg from "../assests/jedfront_cut.jpg";
 import WhiteLogo from "../assests/jedli_logo_white.png";
 import OrangeLogo from "../assests/jedli_logo_orange.png";
 import GreenLogo from "../assests/jedli_logo_green.png";
-import Apple from "../assests/apple.png";
-import Facebook from "../assests/facebook.png";
-import Spotify from "../assests/spotify.png";
-import Instagram from "../assests/instagram.png";
-import Twitter from "../assests/twitter.png";
+import Apple from "../assests/apple_cream.png";
+import Facebook from "../assests/facebook_cream.png";
+import Spotify from "../assests/spotify_cream.png";
+import Instagram from "../assests/instagram_cream.png";
+// import Twitter from "../assests/twitter_cream.png";
 
 import styled, { keyframes } from "styled-components";
 
@@ -161,9 +161,7 @@ const Landing = props => {
               <li>
                 <img src={Facebook} alt='Apple Icon' />
               </li>
-              <li>
-                <img src={Twitter} alt='Twitter Icon' />
-              </li>
+
               <li>
                 <img src={Instagram} alt='Instagram Icon' />
               </li>

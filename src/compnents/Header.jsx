@@ -13,7 +13,7 @@ const NavStation = styled.div`
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  background: rgba(240, 125, 10) 100%;
+  background: rgba(0, 70, 235, 0.1);
 
   &:hover {
   }
