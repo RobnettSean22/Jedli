@@ -1,5 +1,5 @@
 import React from "react";
-import Lyrics from "./Lyrics";
+
 import { Link, Route, Switch, useRouteMatch } from "react-router-dom";
 import styled, { keyframes } from "styled-components";
 
@@ -55,7 +55,6 @@ const TrackTitle = styled.div`
 `;
 
 const TitleList = ({ titles }) => {
-  let { path, url } = useRouteMatch();
   const urlPathAlbumn = titles.collectionName.replace(/\s/g, "-");
   const urlPathSong = titles.trackCensoredName.replace(/\s/g, "-");
   const getRepContents = titles.trackCensoredName.substring(25);
@@ -69,7 +68,7 @@ const TitleList = ({ titles }) => {
         <h1>
           <Link
             to={{
-              pathname: `${url}/${urlPathSong}`,
+              pathname: `/music/${urlPathAlbumn}/${urlPathSong}`,
               state: { music: titles }
             }}
           >
@@ -77,9 +76,6 @@ const TitleList = ({ titles }) => {
           </Link>
         </h1>
       </TrackTitle>
-      <Switch>
-        <Route path={`${path}`} />
-      </Switch>
     </TitlesContainer>
   );
 };
