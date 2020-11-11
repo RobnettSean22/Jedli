@@ -11,7 +11,7 @@ import Spotify from "../assests/spotify.png";
 import Instagram from "../assests/instagram.png";
 import Twitter from "../assests/twitter.png";
 
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 const Background = styled.div`
   width: 100vw;
@@ -47,6 +47,18 @@ const ShadowCase = styled.div`
   flex-direction: column;
 `;
 
+const colorChange = keyframes`
+   0%{
+    color:#e6dfd5;
+  }
+   50% {
+    color:#F07D0A;
+  }
+
+  100% {
+    color:#56C22F;
+  }
+`;
 const Head = styled.div`
   width: 100%;
   height: 4.5%;
@@ -61,12 +73,17 @@ const Head = styled.div`
     margin-top: 1em;
     font-size: 31px;
     text-decoration: none;
+    text-shadow: 0px -3px 0px #fc511b;
     &:hover {
       opacity: 1;
       cursor: pointer;
-      border-bottom: 1px solid white;
-      transition: border-bottom 200ms ease-in;
+      border-bottom: 3px solid #f07d0a;
     }
+  }
+  .music-link {
+   color:#56C22F;
+    text-shadow: 0px -3px 0px #fc511b;
+    /* animation: ${colorChange} 50000ms infinite alternate ease-in-out; */
   }
 `;
 
@@ -128,7 +145,9 @@ const Landing = props => {
         </video>
         <ShadowCase>
           <Head>
-            <Link to='/music/'>Music</Link>
+            <Link className='music-link' to='/music/'>
+              Music
+            </Link>
             <Link to='/videos/'>Videos</Link>
             <Link to='/events/'>Events</Link>
           </Head>

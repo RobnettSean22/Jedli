@@ -16,13 +16,16 @@ const Background = styled.div`
   overflow-y: hidden;
 `;
 const Shadow = styled.div`
-    width: 100%;
-    height: 100%;
-    display:flex;
-    flex-direction:column;
-    justify-content:flex-start;
-    background: linear-gradient( 0deg, rgba(66,32,3,0.57) 0%, rgba(16,14,13,0.74) 100% );
-}
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  background: linear-gradient(
+    0deg,
+    rgba(66, 32, 3, 0.57) 0%,
+    rgba(16, 14, 13, 0.74) 100%
+  );
 `;
 const LyricsCase = styled.div`
   width: 100%;
@@ -43,9 +46,12 @@ const WrittenLyrics = styled.div`
   align-items: center;
   h1 {
     margin: 0 0 0 0;
+
+    color: rgba(230, 223, 213);
   }
   p {
     margin: 0 0 0 0;
+    color: rgba(230, 223, 213);
   }
 `;
 
