@@ -1,17 +1,7 @@
 import React from "react";
 
 import { Link, Route, Switch, useRouteMatch } from "react-router-dom";
-import styled, { keyframes } from "styled-components";
-
-// const visible = keyframes`
-//    from {
-//     opacity:0;
-//   }
-
-//   to {
-//    opacity:1;
-//   }
-// `;
+import styled from "styled-components";
 
 const TitlesContainer = styled.div`
   width: 100%;

@@ -81,19 +81,5 @@ const AlbumCard = props => {
     );
   });
 };
-// const AlbumCard = ({ albumInfo }) => {
-//   const pathTitle = albumInfo.collectionName.replace(/\s/g, "-");
-//   return (
-//     <Card key={albumInfo.collectionId}>
-//       <Link
-//         key={albumInfo.collectionId}
-//         to={{
-//           pathname: `/music/${pathTitle}`
-//         }}
-//       >
-//         <img src={albumInfo.artworkUrl100} alt='album cover artwork' />
-//       </Link>
-//     </Card>
-//   );
-// };
+
 export default AlbumCard;
