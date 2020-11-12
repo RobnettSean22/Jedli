@@ -19,18 +19,17 @@ import styled, { keyframes } from "styled-components";
 const Background = styled.div`
   width: 100vw;
   height: 100vh;
-
+  overflow-y: auto;
   background-image: url(${Stars});
   background-repeat: repeat;
   background-size: cover;
-  overflow-y: hidden;
 `;
 const Shadow = styled.div`
   width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   background: linear-gradient(
     0deg,
     rgba(66, 32, 3, 0.57) 0%,
@@ -41,17 +40,24 @@ const Shadow = styled.div`
 
 const AlbumTitle = styled.div`
   width: 100%;
-  height: 10%;
+  height: 200px;
   display: flex;
-  justify-content: flex-end;
-  align-items: flex-end;
-  background: rgb(21, 21, 21, 0.5);
-  border-top: 1px solid rgb(140, 126, 118);
+  justify-content: center;
+  align-items: center;
+
   h1 {
     color: white;
     margin: 0;
     font-family: sawarabi;
   }
+`;
+
+const RealseDate = styled.div`
+  width: 100%;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 const AlbumnInfoCapsule = styled.div`
@@ -143,10 +149,12 @@ const Albumsonglist = props => {
     <Background>
       <Shadow>
         <Header />
-        <div>
+        <AlbumTitle>
           <h1>{deconAlbum.name}</h1>
-        </div>
-        <div></div>
+        </AlbumTitle>
+        <RealseDate>
+          <h2>2018</h2>
+        </RealseDate>
         <AlbumnInfoCapsule>
           <TitleListGrid>
             {jedliMusic
