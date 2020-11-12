@@ -21,7 +21,7 @@ const Background = styled.div`
   height: 100vh;
 
   background-image: url(${Stars});
-  background-repeat: no-repeat;
+  background-repeat: repeat;
   background-size: cover;
   overflow-y: hidden;
 `;
@@ -143,6 +143,10 @@ const Albumsonglist = props => {
     <Background>
       <Shadow>
         <Header />
+        <div>
+          <h1>{deconAlbum.name}</h1>
+        </div>
+        <div></div>
         <AlbumnInfoCapsule>
           <TitleListGrid>
             {jedliMusic
@@ -152,7 +156,6 @@ const Albumsonglist = props => {
               })}
           </TitleListGrid>
           <AlbumCoverCase>
-            <h1>{deconAlbum.name}</h1>
             <img src={deconAlbum.img} alt='albumn cover art' />
           </AlbumCoverCase>
         </AlbumnInfoCapsule>

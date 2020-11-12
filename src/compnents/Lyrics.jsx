@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import Header from "./Header";
 import Footer from "./Footer";
 import Stars from "../assests/stary_night.jpg";
@@ -188,7 +188,11 @@ const Lyrics = props => {
               {music.map(sing => {
                 return (
                   <div>
-                    <h1>{sing.trackName}</h1>
+                    <div></div>
+                    <div>
+                      {" "}
+                      <Link>{sing.trackName}</Link>
+                    </div>
                   </div>
                 );
               })}
