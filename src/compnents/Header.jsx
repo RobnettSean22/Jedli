@@ -5,15 +5,13 @@ import OrangeLogo from "../assests/jedli_logo_orange.png";
 import GreenLogo from "../assests/jedli_logo_green.png";
 import styled from "styled-components";
 
-const NavStation = styled.div`
-  position: absolute;
-  top: 0;
+const NavStation = styled.header`
   width: 100%;
-  height: 5.9%;
+  height: 55px;
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  background: rgba(0, 70, 235, 0.25);
+  background: #04133b;
 
   &:hover {
   }

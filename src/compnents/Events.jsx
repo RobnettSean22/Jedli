@@ -7,10 +7,9 @@ const Background = styled.div`
   width: 100vw;
   height: 100vh;
   background: #0d1016;
-  overflow-x: hidden;
+
   display: flex;
   flex-direction: column;
-  justify-content: center;
 `;
 
 const PicIllusion = styled.div`

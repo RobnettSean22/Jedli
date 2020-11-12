@@ -117,7 +117,7 @@ const Foot = styled.div`
   width: 100%;
   height: 4.5%;
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-start;
   align-items: flex-end;
   ul {
     margin-bottom: 1%;

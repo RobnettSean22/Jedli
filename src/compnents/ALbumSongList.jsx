@@ -40,7 +40,7 @@ const Shadow = styled.div`
 
 const AlbumTitle = styled.div`
   width: 100%;
-  height: 200px;
+  height: 60px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -54,7 +54,7 @@ const AlbumTitle = styled.div`
 
 const RealseDate = styled.div`
   width: 100%;
-  height: 100px;
+  height: 30px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -62,7 +62,7 @@ const RealseDate = styled.div`
 
 const AlbumnInfoCapsule = styled.div`
   width: 100%;
-  height: 51.6%;
+  height: 378px;
   /* top: 90px;
   position: absolute; */
   display: flex;
@@ -167,8 +167,8 @@ const Albumsonglist = props => {
             <img src={deconAlbum.img} alt='albumn cover art' />
           </AlbumCoverCase>
         </AlbumnInfoCapsule>
-        <Footer />
       </Shadow>
+      <Footer />
     </Background>
   );
 };

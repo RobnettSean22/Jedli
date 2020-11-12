@@ -39,13 +39,13 @@ const AlbumContainer = styled.div`
 const Music = props => {
   return (
     <Background>
+      <Header />
       <Shadow>
-        <Header />
         <AlbumContainer>
           <AlbumCard />
         </AlbumContainer>
-        <Footer />
       </Shadow>
+      <Footer />
     </Background>
   );
 };

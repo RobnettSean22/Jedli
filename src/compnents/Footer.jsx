@@ -6,14 +6,13 @@ import Instagram from "../assests/instagram_cream.png";
 // import Twitter from "../assests/twitter.png";
 import styled from "styled-components";
 
-const NavigationFoot = styled.div`
+const NavigationFoot = styled.footer`
   width: 100%;
   height: 4.5%;
   display: flex;
   justify-content: flex-start;
   align-items: flex-end;
-  position: absolute;
-  bottom: 0;
+
   background: rgba(21, 23, 38, 0.8);
   ul {
     margin-bottom: 4px;
