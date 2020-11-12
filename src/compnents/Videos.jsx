@@ -20,9 +20,6 @@ const VideoGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(1, 100%);
   grid-template-rows: repeat(2, 284px);
-  position: relative;
-
-  top: 45px;
   margin-top: 1px;
 `;
 

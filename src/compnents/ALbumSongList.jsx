@@ -44,6 +44,7 @@ const AlbumTitle = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 60px;
 
   h1 {
     color: white;
@@ -63,8 +64,7 @@ const RealseDate = styled.div`
 const AlbumnInfoCapsule = styled.div`
   width: 100%;
   height: 378px;
-  /* top: 90px;
-  position: absolute; */
+  margin-top: 40px;
   display: flex;
   justify-content: space-between;
   background: rgb(21, 21, 21, 0.9);
