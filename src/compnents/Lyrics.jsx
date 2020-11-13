@@ -112,7 +112,9 @@ const SongTitleList = styled.div`
       margin: 0;
     } */
 `;
-const TrackNumberDisplay = styled.div``;
+const TrackNumberDisplay = styled.div`
+  margin-left: 1px;
+`;
 const TrackNameDisplay = styled.div``;
 
 const SongDisplay = styled.div`
@@ -142,7 +144,7 @@ const Lyrics = props => {
           <WrittenLyrics>
             <h1>{song}</h1>
             <p>
-              [Intro: Eminem] Yeah So I guess this is what it is, huh? Think
+              {/* [Intro: Eminem] Yeah So I guess this is what it is, huh? Think
               it's obvious We ain't never gonna see eye to eye But it's funny As
               much as I hate you I need you This is music to be murdered by
               [Chorus: Nikki Grier] Got a premonition I feel the end is near The
@@ -185,7 +187,7 @@ const Lyrics = props => {
               ever be Only way that you're ahead of me's alphabetically 'Cause
               if you diss me I'm coming after you like the letter V Killing
               everything, play this tune, it's your eulogy It's your funeral,
-              prepare to die This is music for you to be murdered by
+              prepare to die This is music for you to be murdered by */}
             </p>
           </WrittenLyrics>
           <AlbumSongs>
@@ -198,7 +200,9 @@ const Lyrics = props => {
               {music.map(sing => {
                 return (
                   <SongDisplay key={sing.trackNum}>
-                    <TrackNumberDisplay>{sing.trackNum}</TrackNumberDisplay>
+                    <TrackNumberDisplay>
+                      <Link>{sing.trackNum}</Link>
+                    </TrackNumberDisplay>
                     <TrackNameDisplay>
                       {" "}
                       <Link>{sing.trackName}</Link>
