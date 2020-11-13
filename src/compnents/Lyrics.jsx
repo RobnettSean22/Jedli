@@ -91,7 +91,7 @@ const AlbumTitle = styled.div`
 const SongTitleList = styled.div`
   display: grid;
   grid-template-columns: repeat(1, 224px);
-  grid-template-rows: repeat(7, 43.5px);
+
   grid-column-gap: 0px;
   grid-row-gap: 0px;
   border-left: 1px solid rgb(140, 126, 118, 0.3);
@@ -113,15 +113,19 @@ const SongTitleList = styled.div`
     }
   }
 `;
+const TrackNumberDisplay = styled.div``;
+const TrackNameDisplay = styled.div``;
+
+const SongDisplay = styled.div``;
 const Lyrics = props => {
   const [music, setMusic] = useState([
-    { trackName: "Acend" },
-    { trackName: "Neon City" },
-    { trackName: "ABe Free (feat. Rjay Ty)" },
-    { trackName: "I'ma Do My Thang, Daswsup..." },
-    { trackName: "Heat Check" },
-    { trackName: "Oh My God (Love for Me)" },
-    { trackName: "Whatever We Want" }
+    { trackName: "Acend", trackNum: 1 },
+    { trackName: "Neon City", trackNum: 2 },
+    { trackName: "ABe Free (feat. Rjay Ty)", trackNum: 3 },
+    { trackName: "I'ma Do My Thang, Daswsup...", trackNum: 4 },
+    { trackName: "Heat Check", trackNum: 5 },
+    { trackName: "Oh My God (Love for Me)", trackNum: 6 },
+    { trackName: "Whatever We Want", trackNum: 7 }
   ]);
   let { song } = useParams();
   return (
@@ -187,13 +191,13 @@ const Lyrics = props => {
             <SongTitleList>
               {music.map(sing => {
                 return (
-                  <div>
-                    <div></div>
-                    <div>
+                  <SongDisplay key={sing.trackNum}>
+                    <TrackNumberDisplay>{sing.trackNum}</TrackNumberDisplay>
+                    <TrackNameDisplay>
                       {" "}
                       <Link>{sing.trackName}</Link>
-                    </div>
-                  </div>
+                    </TrackNameDisplay>
+                  </SongDisplay>
                 );
               })}
             </SongTitleList>
