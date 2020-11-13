@@ -8,17 +8,20 @@ import styled from "styled-components";
 
 const Background = styled.div`
   width: 100vw;
-  height: 100vh;
+  /* height: 100vh; */
 
   background-image: url(${Stars});
   background-repeat: no-repeat;
   background-size: cover;
-  overflow-y: hidden;
+  background-position: center;
+
+  overflow-x: hidden;
 `;
 const Shadow = styled.div`
   width: 100%;
-  height: 100%;
+  height: 1000px;
   display: flex;
+  overflow: hidden;
   flex-direction: column;
   justify-content: flex-start;
   background: linear-gradient(
@@ -26,13 +29,16 @@ const Shadow = styled.div`
     rgba(66, 32, 3, 0.57) 0%,
     rgba(16, 14, 13, 0.74) 100%
   );
+  backdrop-filter: blur(3px);
+  /* rgb(29, 23, 22, 0.1); */
 `;
 const LyricsCase = styled.div`
   width: 100%;
-  height: 100%;
+  height: 1000px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
+
   background: rgb(21, 21, 21, 0.3);
 `;
 
@@ -57,7 +63,7 @@ const WrittenLyrics = styled.div`
 
 const AlbumSongs = styled.div`
   width: 18.3%;
-  height: 76%;
+  height: 600px;
   margin-right: 2.4%;
   display: flex;
   flex-direction: column;
@@ -98,25 +104,25 @@ const SongTitleList = styled.div`
   border-right: 1px solid rgb(140, 126, 118, 0.3);
   border-top: 1px solid rgb(140, 126, 118, 0.3);
   margin-top: 20px;
-  div {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-    border-bottom: 1px solid rgb(140, 126, 118);
-    h1 {
+
+  /* h1 {
       font-size: 13px;
       font-family: sawarabi;
       color: rgba(230, 223, 213);
       margin: 0;
-    }
-  }
+    } */
 `;
 const TrackNumberDisplay = styled.div``;
 const TrackNameDisplay = styled.div``;
 
-const SongDisplay = styled.div``;
+const SongDisplay = styled.div`
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  height: 46px;
+  border-bottom: 1px solid rgb(140, 126, 118);
+`;
 const Lyrics = props => {
   const [music, setMusic] = useState([
     { trackName: "Acend", trackNum: 1 },
@@ -130,8 +136,8 @@ const Lyrics = props => {
   let { song } = useParams();
   return (
     <Background>
+      <Header />
       <Shadow>
-        <Header />
         <LyricsCase>
           <WrittenLyrics>
             <h1>{song}</h1>
@@ -204,6 +210,7 @@ const Lyrics = props => {
           </AlbumSongs>
         </LyricsCase>
       </Shadow>
+      <Footer />
     </Background>
   );
 };
