@@ -3,7 +3,6 @@ import Header from "../compnents/Header";
 import Footer from "../compnents/Footer";
 import AlbumCard from "../compnents/AlbumCard";
 import Stars from "../assests/stary_night.jpg";
-import axios from "axios";
 import styled from "styled-components";
 
 const Background = styled.div`

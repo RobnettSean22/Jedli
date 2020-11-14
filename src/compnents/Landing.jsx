@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-// import SubtleEnergy from "../assests/jedli_homepage_video_lblue.mp4";
 import SubtleEnergy from "../assests/jedli_for_loop.mp4";
-import Footer from "./Footer";
 import HomeImg from "../assests/jedfront_cut.jpg";
 import WhiteLogo from "../assests/jedli_logo_white.png";
 import OrangeLogo from "../assests/jedli_logo_orange.png";
@@ -11,19 +9,24 @@ import Apple from "../assests/apple_cream.png";
 import Facebook from "../assests/facebook_cream.png";
 import Spotify from "../assests/spotify_cream.png";
 import Instagram from "../assests/instagram_cream.png";
-// import Twitter from "../assests/twitter_cream.png";
 
 import styled, { keyframes } from "styled-components";
 
 const Background = styled.div`
   width: 100vw;
-  height: 100vh;
-  background-image: url(${HomeImg});
+  /* height: 10000px; */
+  /* background-image: url(${HomeImg}); */
   background-repeat: no-repeat;
   background-size: cover;
+  display:flex;
+  justify-content:flex-start;
+  flex-direction:column;
   div {
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 750px;
+    z-index: 1;
+    
+  
 
     video {
       object-fit: cover;
@@ -34,6 +37,14 @@ const Background = styled.div`
       left: 0;
     }
   }
+`;
+const Story = styled.div`
+  h1 {
+    font-size: 70px;
+  }
+  width: 100px;
+  height: 100px;
+  background: pink;
 `;
 
 const ShadowCase = styled.div`
@@ -202,6 +213,9 @@ const Landing = props => {
           </Foot>
         </ShadowCase>
       </div>
+      <Story>
+        <h1>Hello World</h1>
+      </Story>
     </Background>
   );
 };
