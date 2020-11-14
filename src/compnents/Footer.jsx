@@ -59,12 +59,20 @@ const Footer = props => {
           </Links>
         </li>
         <li>
-          <Links>
+          <Links
+            href='https://music.apple.com/us/artist/jedli/1492578733'
+            target='_blank'
+            rel='noopener noreferrer'
+          >
             <img src={Apple} alt='Apple Icon' />
           </Links>
         </li>
         <li>
-          <Links>
+          <Links
+            href='https://open.spotify.com/artist/2JmnGPSpsvhcKoQsgpzZ3Q'
+            target='_blank'
+            rel='noopener noreferrer'
+          >
             <img src={Spotify} alt='Spotify Icon' />
           </Links>
         </li>

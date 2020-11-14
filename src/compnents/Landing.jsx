@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import SubtleEnergy from "../assests/jedli_homepage_video_lblue.mp4";
+// import SubtleEnergy from "../assests/jedli_homepage_video_lblue.mp4";
+import SubtleEnergy from "../assests/jedli_for_loop.mp4";
+import Footer from "./Footer";
 import HomeImg from "../assests/jedfront_cut.jpg";
 import WhiteLogo from "../assests/jedli_logo_white.png";
 import OrangeLogo from "../assests/jedli_logo_orange.png";
@@ -159,17 +161,42 @@ const Landing = props => {
           <Foot>
             <ul>
               <li>
-                <img src={Facebook} alt='Apple Icon' />
+                <a
+                  href='https://www.facebook.com/jstjed/'
+                  target='_blank'
+                  rel='noopener noreferrer'
+                >
+                  <img src={Facebook} alt='Apple Icon' />
+                </a>
               </li>
 
               <li>
-                <img src={Instagram} alt='Instagram Icon' />
+                <a
+                  href='https://www.instagram.com/jstjed/'
+                  target='_blank'
+                  rel='noopener noreferrer'
+                >
+                  {" "}
+                  <img src={Instagram} alt='Instagram Icon' />
+                </a>
               </li>
               <li>
-                <img src={Apple} alt='Apple Icon' />
+                <a
+                  href='https://music.apple.com/us/artist/jedli/1492578733'
+                  target='_blank'
+                  rel='noopener noreferrer'
+                >
+                  <img src={Apple} alt='Apple Icon' />
+                </a>
               </li>
               <li>
-                <img src={Spotify} alt='Spotify Icon' />
+                <a
+                  href='https://open.spotify.com/artist/2JmnGPSpsvhcKoQsgpzZ3Q'
+                  target='_blank'
+                  rel='noopener noreferrer'
+                >
+                  <img src={Spotify} alt='Spotify Icon' />
+                </a>
               </li>
             </ul>
           </Foot>
