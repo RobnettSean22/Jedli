@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import SubtleEnergy from "../assests/jedli_for_loop.mp4";
 import HomeImg from "../assests/jedfront_cut.jpg";
+import Arrow from "../assests/arrow-real-vect_white.png";
 import WhiteLogo from "../assests/jedli_logo_white.png";
 import OrangeLogo from "../assests/jedli_logo_orange.png";
 import GreenLogo from "../assests/jedli_logo_green.png";
@@ -119,6 +120,32 @@ const LogoPlacement = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  & .tostory {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 81px;
+    height: 54px;
+    border-radius: 5px;
+    opacity: 0.3;
+    top: 460px;
+
+    a {
+      text-decoration: none;
+      color: #e6dfd5;
+      font-family: "Luckiest Guy", cursive;
+      font-size: 25px;
+      img {
+        width: 30px;
+        height: 30px;
+      }
+    }
+    &:hover {
+      opacity: 1;
+    }
+  }
 `;
 const Green = styled.img`
   position: absolute;
@@ -189,6 +216,13 @@ const Landing = props => {
             <White src={WhiteLogo} alt='white logo' />
             <Orange src={OrangeLogo} alt='orange logo' />
             <Green src={GreenLogo} alt='green logo' />
+            <div className='tostory'>
+              <a href='#scrollto'>About</a>
+              <a href='#scrollto'>
+                {" "}
+                <img src={Arrow} alt='down vector arrow' />
+              </a>
+            </div>
           </LogoPlacement>
           <Foot>
             <ul>
@@ -235,7 +269,7 @@ const Landing = props => {
         </ShadowCase>
       </div>
       <Story>
-        <OverlayStory>
+        <OverlayStory id='scrollto'>
           <ArtistInfo>
             <p>
               Philippine born music producer, songwriter, & performer started
