@@ -15,18 +15,14 @@ import styled, { keyframes } from "styled-components";
 const Background = styled.div`
   width: 100vw;
   /* height: 10000px; */
-  /* background-image: url(${HomeImg}); */
-  background-repeat: no-repeat;
-  background-size: cover;
-  display:flex;
-  justify-content:flex-start;
-  flex-direction:column;
-  div {
+
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  .viddiv {
     width: 100vw;
     height: 750px;
     z-index: 1;
-    
-  
 
     video {
       object-fit: cover;
@@ -39,12 +35,16 @@ const Background = styled.div`
   }
 `;
 const Story = styled.div`
+  width: 100vw;
+  height: 750px;
+  z-index: 1;
+  background-image: url(${HomeImg});
+  background-repeat: no-repeat;
+  background-size: cover;
+
   h1 {
     font-size: 70px;
   }
-  width: 100px;
-  height: 100px;
-  background: pink;
 `;
 
 const ShadowCase = styled.div`
@@ -58,6 +58,18 @@ const ShadowCase = styled.div`
   );
   display: flex;
   flex-direction: column;
+`;
+const OverlayStory = styled.div`
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    0deg,
+    rgba(66, 33, 3, 0.57) 0%,
+    rgba(156, 66, 6, 0.6) 100%
+  );
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 `;
 
 const colorChange = keyframes`
@@ -148,11 +160,19 @@ const Foot = styled.div`
     }
   }
 `;
+const ArtistInfo = styled.div`
+  width: 700px;
+  height: 696px;
+
+  p {
+    margin: 0;
+  }
+`;
 
 const Landing = props => {
   return (
     <Background>
-      <div>
+      <div className='viddiv'>
         <video muted autoPlay loop poster={HomeImg}>
           <source src={SubtleEnergy} type='video/mp4' />
         </video>
@@ -214,7 +234,28 @@ const Landing = props => {
         </ShadowCase>
       </div>
       <Story>
-        <h1>Hello World</h1>
+        <OverlayStory>
+          <ArtistInfo>
+            <p>
+              Philippine born music producer, songwriter, & performer started
+              making music with People’s Future in Manila, Philippines around
+              2006-2012 releasing 3 projects: “Headlines: Issue #1” “Kinabukasan
+              EP” & “What the Dilis EP” & 2 underground beat tapes “Beats &
+              Broccoli” (2010) & “The Window Seat” (2011). <br></br>He dropped
+              SoundCloud projects “Halo Halo Music” (2015) under the name of
+              JSTJED in California & “Selp Entitled EP” (2017) a collaboration
+              with Yung Bawal as DASWSUP. He produced “Baby Bawal” for Bawal
+              Clan's first album “Paid in Bawal”(2018). JedLi released his first
+              official solo EP in Japan called “Journey to the Adventure”(Dec
+              2019) with independent label, OJT Records, which features RJAY TY
+              & Yung Bawal from Bawal Clan. Since then, he dropped a single
+              produced by Philippine legend, Juss Rye, called “Subtle Energy”
+              (April 2020) & his most recent single, “Lucid” (August 2020)
+              produced by DASWSUP both of which will also have a music video
+              soon.
+            </p>
+          </ArtistInfo>
+        </OverlayStory>
       </Story>
     </Background>
   );
