@@ -49,8 +49,8 @@ const Story = styled.div`
 
 const ShadowCase = styled.div`
   position: absolute;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   background: linear-gradient(
     0deg,
     rgba(66, 33, 3, 0.57) 0%,
@@ -99,6 +99,7 @@ const Head = styled.div`
     font-size: 31px;
     text-decoration: none;
     text-shadow: 0px -3px 0px #fc511b;
+    z-index:1;
     &:hover {
       opacity: 1;
       cursor: pointer;
