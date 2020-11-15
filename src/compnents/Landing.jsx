@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import SubtleEnergy from "../assests/jedli_for_loop.mp4";
 import HomeImg from "../assests/jedfront_cut.jpg";
@@ -11,12 +11,10 @@ import Facebook from "../assests/facebook_cream.png";
 import Spotify from "../assests/spotify_cream.png";
 import Instagram from "../assests/instagram_cream.png";
 
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 
 const Background = styled.div`
   width: 100vw;
-  /* height: 10000px; */
-
   display: flex;
   justify-content: flex-start;
   flex-direction: column;
@@ -73,18 +71,6 @@ const OverlayStory = styled.div`
   align-items: center;
 `;
 
-const colorChange = keyframes`
-   0%{
-    color:#e6dfd5;
-  }
-   50% {
-    color:#F07D0A;
-  }
-
-  100% {
-    color:#56C22F;
-  }
-`;
 const Head = styled.div`
   width: 100%;
   height: 4.5%;
@@ -100,7 +86,7 @@ const Head = styled.div`
     font-size: 31px;
     text-decoration: none;
     text-shadow: 0px -3px 0px #fc511b;
-    z-index:1;
+    z-index: 1;
     &:hover {
       opacity: 1;
       cursor: pointer;
@@ -108,9 +94,8 @@ const Head = styled.div`
     }
   }
   .music-link {
-   color:#56C22F;
+    color: #56c22f;
     text-shadow: 0px -3px 0px #fc511b;
-    /* animation: ${colorChange} 50000ms infinite alternate ease-in-out; */
   }
 `;
 
@@ -194,6 +179,8 @@ const ArtistInfo = styled.div`
 
   p {
     margin: 0;
+    color: #e6dfd5;
+    font-family: "Open Sans", sans-serif;
   }
 `;
 
@@ -217,8 +204,8 @@ const Landing = props => {
             <Orange src={OrangeLogo} alt='orange logo' />
             <Green src={GreenLogo} alt='green logo' />
             <div className='tostory'>
-              <a href='#scrollto'>About</a>
-              <a href='#scrollto'>
+              <a href='#about'>About</a>
+              <a href='#about'>
                 {" "}
                 <img src={Arrow} alt='down vector arrow' />
               </a>
@@ -269,25 +256,29 @@ const Landing = props => {
         </ShadowCase>
       </div>
       <Story>
-        <OverlayStory id='scrollto'>
+        <OverlayStory id='about'>
           <ArtistInfo>
             <p>
               Philippine born music producer, songwriter, & performer started
               making music with People’s Future in Manila, Philippines around
               2006-2012 releasing 3 projects: “Headlines: Issue #1” “Kinabukasan
               EP” & “What the Dilis EP” & 2 underground beat tapes “Beats &
-              Broccoli” (2010) & “The Window Seat” (2011). <br></br>He dropped
-              SoundCloud projects “Halo Halo Music” (2015) under the name of
-              JSTJED in California & “Selp Entitled EP” (2017) a collaboration
-              with Yung Bawal as DASWSUP. He produced “Baby Bawal” for Bawal
-              Clan's first album “Paid in Bawal”(2018). JedLi released his first
-              official solo EP in Japan called “Journey to the Adventure”(Dec
-              2019) with independent label, OJT Records, which features RJAY TY
-              & Yung Bawal from Bawal Clan. Since then, he dropped a single
-              produced by Philippine legend, Juss Rye, called “Subtle Energy”
-              (April 2020) & his most recent single, “Lucid” (August 2020)
-              produced by DASWSUP both of which will also have a music video
-              soon.
+              Broccoli” (2010) & “The Window Seat” (2011).
+              <br />
+              <br />
+              He dropped SoundCloud projects “Halo Halo Music” (2015) under the
+              name of JSTJED in California & “Selp Entitled EP” (2017) a
+              collaboration with Yung Bawal as DASWSUP. He produced “Baby Bawal”
+              for Bawal Clan's first album “Paid in Bawal”(2018).
+              <br />
+              <br />
+              JedLi released his first official solo EP in Japan called “Journey
+              to the Adventure”(Dec 2019) with independent label, OJT Records,
+              which features RJAY TY & Yung Bawal from Bawal Clan. Since then,
+              he dropped a single produced by Philippine legend, Juss Rye,
+              called “Subtle Energy” (April 2020) & his most recent single,
+              “Lucid” (August 2020) produced by DASWSUP both of which will also
+              have a music video soon.
             </p>
           </ArtistInfo>
         </OverlayStory>

@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Link, Route, Switch, useRouteMatch } from "react-router-dom";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 const TitlesContainer = styled.div`
@@ -9,7 +9,6 @@ const TitlesContainer = styled.div`
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  /* border-bottom: 1px solid white; */
 `;
 
 const TrackTitle = styled.div`
@@ -26,7 +25,7 @@ const TrackNumContainer = styled.div`
   align-items: center;
   h1 {
     font-size: 20px;
-    font-family: "sawarabi";
+    font-family: "Open Sans", sans-serif;
     color: rgb(140, 126, 118);
   }
 `;
@@ -41,7 +40,7 @@ const SongLinkContainer = styled.div`
     text-decoration: none;
     color: rgb(140, 126, 118);
     font-size: 23px;
-    font-family: "sawarabi";
+    font-family: "Open Sans", sans-serif;
     color: rgb(140, 126, 118);
     margin: 0;
     &:hover {

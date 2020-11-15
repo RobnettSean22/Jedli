@@ -4,17 +4,7 @@ import TitleList from "./TitleList";
 import Header from "./Header";
 import Footer from "./Footer";
 import Stars from "../assests/stary_night.jpg";
-import styled, { keyframes } from "styled-components";
-
-// const slide = keyframes`
-//    from {
-//     transform: translate(-1400px);
-//   }
-
-//   to {
-//     transform: translate(0px);
-//   }
-// `;
+import styled from "styled-components";
 
 const Background = styled.div`
   width: 100vw;
@@ -49,7 +39,8 @@ const AlbumTitle = styled.div`
   h1 {
     color: white;
     margin: 0;
-    font-family: sawarabi;
+    font-family: "Open Sans", sans-serif;
+    font-weight: bold;
   }
 `;
 
@@ -103,7 +94,7 @@ const AlbumCoverCase = styled.div`
   h1 {
     position: absolute;
     text-align: center;
-    font-family: sawarabi;
+    font-family: "Luckiest Guy", cursive;
     color: rgba(230, 223, 213);
     margin: 0 0% 2% 0%;
     top: 0;
@@ -115,7 +106,7 @@ const AlbumCoverCase = styled.div`
     width: 428px;
     height: 428px;
     border-radius: 33px;
-    /* border: 1px solid rgb(0, 103, 255); */
+
     box-shadow: 2px 1px 12px 0 rgba(0, 0, 0, 0.62);
   }
 `;

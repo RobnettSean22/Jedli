@@ -4,11 +4,6 @@ import JTA from "../assests/journey.jpg";
 import Lucid from "../assests/lucid.jpg";
 import styled from "styled-components";
 
-const CardCase = styled.div`
-  width: 100%;
-  height: 100%;
-`;
-
 const Card = styled.span`
   position: relative;
   display: inline-block;

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Header from "../compnents/Header";
 import Footer from "../compnents/Footer";
 import AlbumCard from "../compnents/AlbumCard";
