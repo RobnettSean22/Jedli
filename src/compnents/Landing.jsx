@@ -259,26 +259,83 @@ const Landing = props => {
         <OverlayStory id='about'>
           <ArtistInfo>
             <p>
-              Philippine born music producer, songwriter, & performer started
-              making music with People’s Future in Manila, Philippines around
-              2006-2012 releasing 3 projects: “Headlines: Issue #1” “Kinabukasan
-              EP” & “What the Dilis EP” & 2 underground beat tapes “Beats &
-              Broccoli” (2010) & “The Window Seat” (2011).
+              With sights aimed to deliver a message to those that are willing
+              to listen, that nothing is random, everything synchronistic and
+              has significance.
               <br />
               <br />
-              He dropped SoundCloud projects “Halo Halo Music” (2015) under the
-              name of JSTJED in California & “Selp Entitled EP” (2017) a
-              collaboration with Yung Bawal as DASWSUP. He produced “Baby Bawal”
-              for Bawal Clan's first album “Paid in Bawal”(2018).
+              JedLi, songwriter, rapper, and producer was born out of Subic bay,
+              Olongapo City, in the Philippines and began his music career in
+              the city of Manila in the Philippines with the rap group People’s
+              Future. During that time the group released several projects
+              including Headline Issues, Kinabukasan EP and What the Dilis Ep.
+              The group then went on to perform around the country and even
+              became finalist on Filscap, the Filipino Society of Composers,
+              Authors, and Publishers.
               <br />
               <br />
-              JedLi released his first official solo EP in Japan called “Journey
-              to the Adventure”(Dec 2019) with independent label, OJT Records,
-              which features RJAY TY & Yung Bawal from Bawal Clan. Since then,
-              he dropped a single produced by Philippine legend, Juss Rye,
-              called “Subtle Energy” (April 2020) & his most recent single,
-              “Lucid” (August 2020) produced by DASWSUP both of which will also
-              have a music video soon.
+              JedLi then took to the battle rap seen joining the FlipTop Rap
+              Battle League becoming one of the first English speaking MC to
+              compete in the battle conference. He made several appearances
+              before hanging it up.
+              <br />
+              <br />
+              “Oh, hahaha, you saw that. Yeah man, that was forever ago. I was
+              in a different state of mind then. I appreciate everything and the
+              experiences that I had there but while I was doing it, I realized
+              that it just wasn’t my realm and didn’t mesh with who I was
+              striving to be mentally and spiritually so I decided to go a
+              different route.”
+              <br />
+              <br />
+              Breaking away from Fliptop by no means slowed down the Pilipino
+              rapper, he then went on to work and collaborate with Young Bawal
+              and the Bawal Clan and helped produce BC’s first album Paid in
+              Bawal which further strengthen his relationship with the Bawal
+              Clan.
+              <br />
+              <br />
+              His music drove him, inspired him and changed is mental. “It has
+              broadened my mind to pay attention to and learn about music and
+              its many styles and how they differentiate across nations. I
+              wanted to know more. I wanted to become a student of the game and
+              this universe. Everything has got this rhythmic element to it.
+              Whether its is from people or in nature, I can hear it now.
+              Because of music I’m in tuned with this world its sounds and their
+              wavelength.”
+              <br />
+              <br />
+              Now lving in Japan, JedLi has worked with OJT Records and Juss Rye
+              from Sun Valley Crew releasing The Journey to the Adventure EP,
+              his single, Lucid, and the Subtle Energy music video. He is an
+              artist that one day wants to reside among the stars scattered
+              throughout the conscious energy field. “You seen Avatar the last
+              air bender? You know when goes into the Avatar state. It’s like
+              that. The world tries to tell us what we can and can’t do but I
+              don’t sense that negativity when I’m JedLiI feel like I’m in my
+              own avatar state ya know.”
+              <br />
+              <br />
+              JedLi continues to move forward and perfect his craft so the
+              people in this world can hear a sound that makes them feel good
+              about themselves when they need a reminder every now and then.
+              “First things first I do this for me because it makes me feel
+              good… its who I am but I also do it to project the good vibes I’m
+              feeling and hopefully it will lift up those who are tuned if only
+              for a moment. This is something I feel like I am meant to do I
+              have to do.”
+              <br />
+              <br />
+              ” It doesn’t matter what language a person speaks, music is
+              something you feel and it has the ability to work its way into a
+              person mind and their soul. “
+              <br />
+              <br />
+              He is in tune with the energy frequency and vibration, a
+              self-proclaimed Metaphysicist,
+              <br />
+              <br />
+              JedLi.
             </p>
           </ArtistInfo>
         </OverlayStory>
