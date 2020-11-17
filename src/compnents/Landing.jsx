@@ -66,6 +66,7 @@ const OverlayStory = styled.div`
     rgba(66, 33, 3, 0.57) 0%,
     rgba(156, 66, 6, 0.6) 100%
   );
+
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -173,12 +174,36 @@ const Foot = styled.div`
     }
   }
 `;
+const LogoTopLeft = styled.div`
+  width: 720px;
+  height: 100%;
+  & img {
+    position: absolute;
+    width: 420px;
+    height: 356px;
+  }
+`;
+const WhiteLogoStory = styled.img`
+  bottom: -306px;
+  left: 37px;
+`;
+const OrangeLogoStory = styled.img`
+  bottom: -308px;
+  left: 37px;
+`;
+const GreenLogoStory = styled.img`
+  bottom: -306px;
+  left: 38px;
+`;
 const ArtistInfo = styled.div`
   width: 700px;
-  height: 696px;
+  height: 100%;
+  background: rgb(29, 23, 21, 0.5);
+
   overflow-x: auto;
   p {
     margin: 0;
+    padding: 16px;
     color: #e6dfd5;
     font-family: "Open Sans", sans-serif;
   }
@@ -257,6 +282,11 @@ const Landing = props => {
       </div>
       <Story>
         <OverlayStory id='about'>
+          <LogoTopLeft>
+            <WhiteLogoStory src={WhiteLogo} alt='white logo' />
+            <OrangeLogoStory src={OrangeLogo} alt='orange logo' />
+            <GreenLogoStory src={GreenLogo} alt='green logo' />
+          </LogoTopLeft>
           <ArtistInfo>
             <p>
               With sights aimed to deliver a message to those that are willing
