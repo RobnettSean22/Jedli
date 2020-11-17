@@ -176,7 +176,7 @@ const Foot = styled.div`
 const ArtistInfo = styled.div`
   width: 700px;
   height: 696px;
-
+  overflow-x: auto;
   p {
     margin: 0;
     color: #e6dfd5;
@@ -260,27 +260,27 @@ const Landing = props => {
           <ArtistInfo>
             <p>
               With sights aimed to deliver a message to those that are willing
-              to listen, that nothing is random, everything synchronistic and
-              has significance.
+              to listen, nothing is random, nothing is coincidence, everything
+              is synchronistic and has significance for JedLi.
               <br />
               <br />
-              JedLi, songwriter, rapper, and producer was born out of Subic bay,
+              The songwriter, rapper, and producer was born out of Subic bay,
               Olongapo City, in the Philippines and began his music career in
-              the city of Manila in the Philippines with the rap group People’s
-              Future. During that time the group released several projects
-              including Headline Issues, Kinabukasan EP and What the Dilis Ep.
-              The group then went on to perform around the country and even
-              became finalist on Filscap, the Filipino Society of Composers,
-              Authors, and Publishers.
+              the city of Manila with the rap group People’s Future. During that
+              time the group released several projects including Headline Issue
+              #1, Kinabukasan EP and What the Dilis EP. The group then went on
+              to perform around the country and even became finalists on
+              FILSCAP’s National Songwriting Contest, (the Filipino Society of
+              Composers, Authors, and Publishers).
               <br />
               <br />
-              JedLi then took to the battle rap seen joining the FlipTop Rap
-              Battle League becoming one of the first English speaking MC to
+              JedLi then took to the battle rap scene joining the FlipTop Rap
+              Battle League becoming one of the first English speaking emcees to
               compete in the battle conference. He made several appearances
               before hanging it up.
               <br />
               <br />
-              “Oh, hahaha, you saw that. Yeah man, that was forever ago. I was
+              “Oh, hahaha, you saw that? Yeah man, that was forever ago. I was
               in a different state of mind then. I appreciate everything and the
               experiences that I had there but while I was doing it, I realized
               that it just wasn’t my realm and didn’t mesh with who I was
@@ -288,50 +288,53 @@ const Landing = props => {
               different route.”
               <br />
               <br />
-              Breaking away from Fliptop by no means slowed down the Pilipino
-              rapper, he then went on to work and collaborate with Young Bawal
-              and the Bawal Clan and helped produce BC’s first album Paid in
-              Bawal which further strengthen his relationship with the Bawal
-              Clan.
+              Breaking away from Fliptop by no means slowed down the
+              Filipino-American rapper. He went on to work and collaborate with
+              Yung Bawal in San Diego, CA forming their production duo, DASWSUP,
+              releasing a SoundCloud project “The Selp-Entitled EP”. He would
+              then connect with their Philippine collective, Bawal Clan,
+              producing “Baby Bawal” off BC’s first album “Paid in Bawal” which
+              further strengthened his relationship with Bawal Clan.
               <br />
               <br />
-              His music drove him, inspired him and changed is mental. “It has
-              broadened my mind to pay attention to and learn about music and
-              its many styles and how they differentiate across nations. I
+              His love for music drove him, inspired him, and changed is mental.
+              “It has broadened my mind to pay attention and learn about music,
+              it’s many styles, and how they differentiate across nations. I
               wanted to know more. I wanted to become a student of the game and
-              this universe. Everything has got this rhythmic element to it.
-              Whether its is from people or in nature, I can hear it now.
-              Because of music I’m in tuned with this world its sounds and their
-              wavelength.”
+              this lifestyle. Everything has got this rhythmic element to it.
+              Whether its from people speaking or sounds in nature, I can hear
+              it now. Because of music, I’m tuned in with the source, its
+              sounds, and their wavelength.”
               <br />
               <br />
-              Now lving in Japan, JedLi has worked with OJT Records and Juss Rye
-              from Sun Valley Crew releasing The Journey to the Adventure EP,
-              his single, Lucid, and the Subtle Energy music video. He is an
-              artist that one day wants to reside among the stars scattered
-              throughout the conscious energy field. “You seen Avatar the last
-              air bender? You know when goes into the Avatar state. It’s like
-              that. The world tries to tell us what we can and can’t do but I
-              don’t sense that negativity when I’m JedLiI feel like I’m in my
-              own avatar state ya know.”
+              Currently living in Japan, JedLi released his first solo EP
+              “Journey to the Adventure” with OJT Records, and single “Lucid”
+              along with a collaboration with Juss Rye of SVC “Subtle Energy”
+              (music video directed by Sean Brown). He is an artist that one day
+              wants to reside amongst the stars scattered throughout this
+              conscious energy field. “You seen Avatar the Last Air Bender? You
+              know when he goes into the Avatar state? It’s like that. The world
+              tries to tell us what we can and can’t do but I don’t sense that
+              negativity when I’m JedLi. I feel like I’m in my own avatar state
+              ahaaa.”
               <br />
               <br />
-              JedLi continues to move forward and perfect his craft so the
-              people in this world can hear a sound that makes them feel good
-              about themselves when they need a reminder every now and then.
-              “First things first I do this for me because it makes me feel
-              good… its who I am but I also do it to project the good vibes I’m
-              feeling and hopefully it will lift up those who are tuned if only
-              for a moment. This is something I feel like I am meant to do I
-              have to do.”
+              JedLi continues to move forward looking to perfect his craft so
+              the people in this world can hear a sound that makes them feel
+              good about themselves when they need a reminder every now and
+              then. “First things first, I do this for me because it makes me
+              feel good. It’s who I am but I also do it to project the vibes I’m
+              feeling and hopefully it will uplift those who are tuned in if
+              only for a moment. This is something I feel like I am meant to do,
+              what I have to do.”
               <br />
               <br />
-              ” It doesn’t matter what language a person speaks, music is
+              ”It doesn’t matter what language a person speaks, music is
               something you feel and it has the ability to work its way into a
-              person mind and their soul. “
+              person’s mind, body, and their soul.”
               <br />
               <br />
-              He is in tune with the energy frequency and vibration, a
+              He is in tune with the energy, frequency, and vibration, a
               self-proclaimed Metaphysicist,
               <br />
               <br />
