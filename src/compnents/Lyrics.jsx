@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import Header from "./Header";
 import Footer from "./Footer";
 import Stars from "../assests/stary_night.jpg";
 import JTA from "../assests/journey.jpg";
+import axios from "axios";
 import styled from "styled-components";
 
 const Background = styled.div`
@@ -30,7 +31,6 @@ const Shadow = styled.div`
     rgba(16, 14, 13, 0.74) 100%
   );
   backdrop-filter: blur(3px);
-  /* rgb(29, 23, 22, 0.1); */
 `;
 const LyricsCase = styled.div`
   width: 100%;
@@ -134,7 +134,7 @@ const SongDisplay = styled.div`
   border-bottom: 1px solid rgb(140, 126, 118);
 `;
 const Lyrics = props => {
-  const [music, setMusic] = useState([
+  const [musicLyrics, setMusicLyrics] = useState([
     { trackName: "Acend", trackNum: 1 },
     { trackName: "Neon City", trackNum: 2 },
     { trackName: "ABe Free (feat. Rjay Ty)", trackNum: 3 },
@@ -143,6 +143,14 @@ const Lyrics = props => {
     { trackName: "Oh My God (Love for Me)", trackNum: 6 },
     { trackName: "Whatever We Want", trackNum: 7 }
   ]);
+  useEffect(() => {}, []);
+
+  const writenLyrics = async () => {
+    const res = await axios.get(
+      `mongodb+srv://Know1e:<password>@jedlidata.vrhwt.mongodb.net/<dbname>?retryWrites=true&w=majority`
+    );
+  };
+
   let { song } = useParams();
   return (
     <Background>
@@ -205,7 +213,7 @@ const Lyrics = props => {
             </AlbumTitle>
 
             <SongTitleList>
-              {music.map(sing => {
+              {musicLyrics.map(sing => {
                 return (
                   <SongDisplay key={sing.trackNum}>
                     <TrackNumberDisplay>
