@@ -145,11 +145,7 @@ const Lyrics = props => {
   ]);
   useEffect(() => {}, []);
 
-  const writenLyrics = async () => {
-    const res = await axios.get(
-      `mongodb+srv://Know1e:<password>@jedlidata.vrhwt.mongodb.net/<dbname>?retryWrites=true&w=majority`
-    );
-  };
+  const writenLyrics = async () => {};
 
   let { song } = useParams();
   return (
