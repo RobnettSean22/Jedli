@@ -1,14 +1,13 @@
 const express = require("express");
 const router = express.Router();
-const Lyrics = require("../models/lyric");
+const Lyric = require("../models/lyric");
 
 router.get("/", async (req, res) => {
+  const results = await Lyric.find({});
   try {
-    const results = await Lyrics.find();
-    console.log(results);
-    res.json(results);
+    res.send(results);
   } catch (err) {
-    res.json({ message: err });
+    res.json({ message: "Not found" });
   }
 });
 module.exports = router;

@@ -21,5 +21,10 @@ const LyricSchema = mongoose.Schema({
     type: String,
     required: true
   }
+  // trackNumber:Number,
+  // artist:String,
+  // collectionName:String,
+  // trackName:String,
+  // lyrics:String
 });
 module.exports = mongoose.model("lyric", LyricSchema);
