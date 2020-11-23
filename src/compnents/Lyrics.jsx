@@ -134,6 +134,7 @@ const SongDisplay = styled.div`
   border-bottom: 1px solid rgb(140, 126, 118);
 `;
 const Lyrics = props => {
+  const [originalName, setOriginalName] = useState(useParams().song);
   const [musicLyrics, setMusicLyrics] = useState([
     { trackName: "Acend", trackNum: 1 },
     { trackName: "Neon City", trackNum: 2 },
@@ -143,10 +144,16 @@ const Lyrics = props => {
     { trackName: "Oh My God (Love for Me)", trackNum: 6 },
     { trackName: "Whatever We Want", trackNum: 7 }
   ]);
-  useEffect(() => {}, []);
+  useEffect(() => {
+    writenLyrics();
+  }, []);
 
-  const writenLyrics = async () => {};
-
+  const writenLyrics = async () => {
+    const res = await axios.get("/lyrics");
+    const { data } = await res;
+    console.log(data);
+  };
+  console.log(originalName);
   let { song } = useParams();
   return (
     <Background>
