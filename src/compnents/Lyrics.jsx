@@ -137,15 +137,10 @@ const Lyrics = props => {
   const [originalName, setOriginalName] = useState(
     useParams().song.replace(/-/g, " ")
   );
-  const [musicLyrics, setMusicLyrics] = useState([
-    { trackName: "Acend", trackNum: 1 },
-    { trackName: "Neon City", trackNum: 2 },
-    { trackName: "ABe Free (feat. Rjay Ty)", trackNum: 3 },
-    { trackName: "I'ma Do My Thang, Daswsup...", trackNum: 4 },
-    { trackName: "Heat Check", trackNum: 5 },
-    { trackName: "Oh My God (Love for Me)", trackNum: 6 },
-    { trackName: "Whatever We Want", trackNum: 7 }
-  ]);
+  const [coverName, setCoverName] = useState(
+    useParams().album.replace(/-/g, " ")
+  );
+  const [musicLyrics, setMusicLyrics] = useState([]);
 
   useEffect(() => {
     writenLyrics();
@@ -154,76 +149,45 @@ const Lyrics = props => {
   const writenLyrics = async () => {
     const res = await axios.get("/lyrics");
     const { data } = await res;
-    console.log(data);
+
+    setMusicLyrics(
+      data.filter(albumnName => {
+        return albumnName.collectionName === coverName;
+      })
+    );
   };
-  console.log(originalName);
+  console.log(musicLyrics);
 
   return (
     <Background>
       <Header />
       <Shadow>
         <LyricsCase>
-          <WrittenLyrics>
-            <h1>{originalName}</h1>
-            <p>
-              [Intro: Eminem] Yeah So I guess this is what it is, huh? Think
-              it's obvious We ain't never gonna see eye to eye But it's funny As
-              much as I hate you I need you This is music to be murdered by
-              [Chorus: Nikki Grier] Got a premonition I feel the end is near The
-              beauty starts to fade The joy has turned to pain I hear the
-              symphony playin' Ten thousand violins Souls floating away like
-              feathers in the wind [Verse: Eminem] They said my last album I
-              sounded bitter No, I sound like a spitter Who ninety percent of
-              These hypocrites are tryna get rid of But why would I get a chip
-              on my shoulder? I was considered, one time, as the illest Bitch,
-              I'm still as fly as your zipper True, I just get richer But if it
-              was ever all about skrilla Then I woulda quit a long motherfucking
-              time ago Bitch, shut the fuck up I should go say that shit to Tech
-              N9ne or to Jigga Nobody said shit about 2 Chainz as long as he's
-              been here, shit No wonder you're mad, now I'm Looking at them
-              plaques, count 'em (Yeah) I'm LL Cool J, Bigger and Deffer, that's
-              how come (Uh) I sell like four mil' when I put out a bad album
-              (What?) Revival flopped, came back and I scared the crap out 'em
-              But Rolling Stone stars, I get two and a half outta Five, and I'll
-              laugh out loud 'Cause that's what they gave BAD back in the day
-              Which actually made me not feel as bad now, 'cause If it happened
-              to James It can happen to Shady They do the same shit to Brady
-              More people hate me than love me This game will make you go crazy
-              'Bout to go for B-R-O-K-E I was the G, the O-A-T Once I was played
-              in rotation At every radio station They said I'm lyrically amazing
-              But I have nothing to say But then when I put out Revival and I
-              had something to say They said that they hated the awake me I lose
-              the rage, I'm too tame I get it back, they say I'm too angry I
-              need to get me some Dre beats No, I should hook up with Tay Keith
-              Fans keep on pulling me one way Haters pull me in another Got more
-              hooks in me than Swae Lee 'Bout to pick up some weights and lift
-              'til my tattoo of Hailie's face stretches They said I'm just a
-              whiner, I sound like a baby I dish it out but can't take it But I
-              take it, dish it back out And they get all bent out of shape This
-              shit's almost comical Wait, and I meant no disrespect I wasn't
-              dissin' Tech, that was not a shot at 2 Chainz or to Jay-Z They
-              probably feel the same way because lately Instead of us being
-              credited for longevity And being able to keep it up for this long
-              at this level, we Get told we'll never be what we were Bitch, if I
-              was as half as good as I was I'm still twice as good as you'll
-              ever be Only way that you're ahead of me's alphabetically 'Cause
-              if you diss me I'm coming after you like the letter V Killing
-              everything, play this tune, it's your eulogy It's your funeral,
-              prepare to die This is music for you to be murdered by
-            </p>
-          </WrittenLyrics>
+          {musicLyrics
+            .filter(oneTitle => {
+              return oneTitle.trackName === originalName;
+            })
+            .map(result => {
+              return (
+                <WrittenLyrics>
+                  <h1>{result.trackName}</h1>
+                  <p>{result.lyrics}</p>{" "}
+                </WrittenLyrics>
+              );
+            })}
+
           <AlbumSongs>
             <img src={JTA} alt='album art' />
             <AlbumTitle>
-              <h1>Journey to the Adventure</h1>
+              <h1>{coverName}</h1>
             </AlbumTitle>
 
             <SongTitleList>
               {musicLyrics.map(sing => {
                 return (
-                  <SongDisplay key={sing.trackNum}>
+                  <SongDisplay key={sing.trackNumber}>
                     <TrackNumberDisplay>
-                      <Link>{sing.trackNum}</Link>
+                      <Link>{sing.trackNumber}</Link>
                     </TrackNumberDisplay>
                     <TrackNameDisplay>
                       {" "}
