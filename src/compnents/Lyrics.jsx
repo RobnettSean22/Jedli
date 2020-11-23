@@ -134,7 +134,9 @@ const SongDisplay = styled.div`
   border-bottom: 1px solid rgb(140, 126, 118);
 `;
 const Lyrics = props => {
-  const [originalName, setOriginalName] = useState(useParams().song);
+  const [originalName, setOriginalName] = useState(
+    useParams().song.replace(/-/g, " ")
+  );
   const [musicLyrics, setMusicLyrics] = useState([
     { trackName: "Acend", trackNum: 1 },
     { trackName: "Neon City", trackNum: 2 },
@@ -144,6 +146,7 @@ const Lyrics = props => {
     { trackName: "Oh My God (Love for Me)", trackNum: 6 },
     { trackName: "Whatever We Want", trackNum: 7 }
   ]);
+
   useEffect(() => {
     writenLyrics();
   }, []);
@@ -154,14 +157,14 @@ const Lyrics = props => {
     console.log(data);
   };
   console.log(originalName);
-  let { song } = useParams();
+
   return (
     <Background>
       <Header />
       <Shadow>
         <LyricsCase>
           <WrittenLyrics>
-            <h1>{song}</h1>
+            <h1>{originalName}</h1>
             <p>
               [Intro: Eminem] Yeah So I guess this is what it is, huh? Think
               it's obvious We ain't never gonna see eye to eye But it's funny As
