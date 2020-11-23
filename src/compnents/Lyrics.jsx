@@ -171,7 +171,9 @@ const Lyrics = props => {
               return (
                 <WrittenLyrics>
                   <h1>{result.trackName}</h1>
-                  <p>{result.lyrics}</p>{" "}
+                  {result.lyrics.split("*").map(item => {
+                    return <p>{item}</p>;
+                  })}
                 </WrittenLyrics>
               );
             })}
