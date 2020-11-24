@@ -133,6 +133,11 @@ const SongDisplay = styled.div`
   height: 46px;
   border-bottom: 1px solid rgb(140, 126, 118);
 `;
+const Buffer = styled.div`
+  width: 100px;
+  height: 100px;
+  background: blue;
+`;
 const Lyrics = props => {
   const [originalName, setOriginalName] = useState(
     useParams().song.replace(/-/g, " ")
@@ -140,7 +145,8 @@ const Lyrics = props => {
   const [coverName, setCoverName] = useState(
     useParams().album.replace(/-/g, " ")
   );
-  const [musicLyrics, setMusicLyrics] = useState([]);
+
+  const [musicLyrics, setMusicLyrics] = useState(null);
 
   useEffect(() => {
     writenLyrics();
@@ -162,45 +168,56 @@ const Lyrics = props => {
     <Background>
       <Header />
       <Shadow>
-        <LyricsCase>
-          {musicLyrics
-            .filter(oneTitle => {
-              return oneTitle.trackName === originalName;
-            })
-            .map(result => {
-              return (
-                <WrittenLyrics>
-                  <h1>{result.trackName}</h1>
-                  {result.lyrics.split("*").map(item => {
-                    return <p>{item}</p>;
-                  })}
-                </WrittenLyrics>
-              );
-            })}
-
-          <AlbumSongs>
-            <img src={JTA} alt='album art' />
-            <AlbumTitle>
-              <h1>{coverName}</h1>
-            </AlbumTitle>
-
-            <SongTitleList>
-              {musicLyrics.map(sing => {
+        {musicLyrics ? (
+          <LyricsCase>
+            {musicLyrics
+              .filter(oneTitle => {
+                return oneTitle.trackName === originalName;
+              })
+              .map(result => {
                 return (
-                  <SongDisplay key={sing.trackNumber}>
-                    <TrackNumberDisplay>
-                      <Link>{sing.trackNumber}</Link>
-                    </TrackNumberDisplay>
-                    <TrackNameDisplay>
-                      {" "}
-                      <Link>{sing.trackName}</Link>
-                    </TrackNameDisplay>
-                  </SongDisplay>
+                  <WrittenLyrics>
+                    <h1>{result.trackName}</h1>
+                    <p>
+                      {result.lyrics.split("*").map(item => {
+                        return (
+                          <span>
+                            {item}
+                            <br />
+                          </span>
+                        );
+                      })}
+                    </p>
+                  </WrittenLyrics>
                 );
               })}
-            </SongTitleList>
-          </AlbumSongs>
-        </LyricsCase>
+
+            <AlbumSongs>
+              <img src={JTA} alt='album art' />
+              <AlbumTitle>
+                <h1>{coverName}</h1>
+              </AlbumTitle>
+
+              <SongTitleList>
+                {musicLyrics.map(sing => {
+                  return (
+                    <SongDisplay key={sing.trackNumber}>
+                      <TrackNumberDisplay>
+                        <Link>{sing.trackNumber}</Link>
+                      </TrackNumberDisplay>
+                      <TrackNameDisplay>
+                        {" "}
+                        <Link>{sing.trackName}</Link>
+                      </TrackNameDisplay>
+                    </SongDisplay>
+                  );
+                })}
+              </SongTitleList>
+            </AlbumSongs>
+          </LyricsCase>
+        ) : (
+          <Buffer></Buffer>
+        )}
       </Shadow>
       <Footer />
     </Background>
