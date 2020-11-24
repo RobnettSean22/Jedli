@@ -37,7 +37,7 @@ const LyricsCase = styled.div`
   width: 100%;
   height: 1000px;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
 
   background: rgb(21, 21, 21, 0.3);
@@ -47,12 +47,10 @@ const WrittenLyrics = styled.div`
   width: 47.6%;
   height: 100%;
   margin-left: 2.4%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
+
   h1 {
-    margin: 0 0 0 0;
+    margin-top: 100px;
+    text-align: center;
 
     color: rgba(230, 223, 213);
   }
@@ -60,6 +58,10 @@ const WrittenLyrics = styled.div`
     margin: 0 0 0 0;
     color: rgba(230, 223, 213);
     line-height: 1.5;
+    & span {
+      padding-left: 0px;
+      padding-right: 0px;
+    }
   }
 `;
 
@@ -67,6 +69,7 @@ const AlbumSongs = styled.div`
   width: 18.3%;
   height: 600px;
   margin-right: 2.4%;
+  margin-top: 100px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -135,6 +138,14 @@ const SongDisplay = styled.div`
   height: 46px;
   border-bottom: 1px solid rgb(140, 126, 118);
 `;
+const SongTitleContainer = styled.div`
+  width: 100%;
+  height: 70px;
+`;
+const SongLyricsContainer = styled.div`
+  width: 100%;
+  height: 100%;
+`;
 
 const Lyrics = props => {
   const [originalName, setOriginalName] = useState(
@@ -176,11 +187,13 @@ const Lyrics = props => {
                 return (
                   <WrittenLyrics>
                     <h1>{result.trackName}</h1>
+
                     <p>
                       {result.lyrics.split("*").map(item => {
                         return (
                           <span>
                             {item}
+                            <br />
                             <br />
                           </span>
                         );
