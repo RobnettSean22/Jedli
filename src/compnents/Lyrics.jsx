@@ -6,6 +6,7 @@ import Stars from "../assests/stary_night.jpg";
 import JTA from "../assests/journey.jpg";
 import axios from "axios";
 import styled from "styled-components";
+import Spinner from "react-bootstrap/Spinner";
 
 const Background = styled.div`
   width: 100vw;
@@ -58,6 +59,7 @@ const WrittenLyrics = styled.div`
   p {
     margin: 0 0 0 0;
     color: rgba(230, 223, 213);
+    line-height: 1.5;
   }
 `;
 
@@ -133,11 +135,7 @@ const SongDisplay = styled.div`
   height: 46px;
   border-bottom: 1px solid rgb(140, 126, 118);
 `;
-const Buffer = styled.div`
-  width: 100px;
-  height: 100px;
-  background: blue;
-`;
+
 const Lyrics = props => {
   const [originalName, setOriginalName] = useState(
     useParams().song.replace(/-/g, " ")
@@ -216,7 +214,7 @@ const Lyrics = props => {
             </AlbumSongs>
           </LyricsCase>
         ) : (
-          <Buffer></Buffer>
+          <Spinner animation='grow' variant='light' />
         )}
       </Shadow>
       <Footer />
