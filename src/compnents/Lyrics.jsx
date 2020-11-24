@@ -58,10 +58,7 @@ const WrittenLyrics = styled.div`
     margin: 0 0 0 0;
     color: rgba(230, 223, 213);
     line-height: 1.5;
-    & span {
-      padding-left: 0px;
-      padding-right: 0px;
-    }
+    white-space: pre-wrap;
   }
 `;
 
@@ -188,17 +185,9 @@ const Lyrics = props => {
                   <WrittenLyrics>
                     <h1>{result.trackName}</h1>
 
-                    <p>
-                      {result.lyrics.split("*").map(item => {
-                        return (
-                          <span>
-                            {item}
-                            <br />
-                            <br />
-                          </span>
-                        );
-                      })}
-                    </p>
+                    {result.lyrics.split("*").map((items, i) => {
+                      return <p key={i}>{items} </p>;
+                    })}
                   </WrittenLyrics>
                 );
               })}
