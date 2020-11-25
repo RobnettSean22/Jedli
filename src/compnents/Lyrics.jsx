@@ -7,6 +7,7 @@ import JTA from "../assests/journey.jpg";
 import axios from "axios";
 import styled from "styled-components";
 import Spinner from "react-bootstrap/Spinner";
+import { findByLabelText } from "@testing-library/dom";
 
 const Background = styled.div`
   width: 100vw;
@@ -16,7 +17,6 @@ const Background = styled.div`
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-
   overflow-x: hidden;
 `;
 const Shadow = styled.div`
@@ -135,14 +135,6 @@ const SongDisplay = styled.div`
   height: 46px;
   border-bottom: 1px solid rgb(140, 126, 118);
 `;
-const SongTitleContainer = styled.div`
-  width: 100%;
-  height: 70px;
-`;
-const SongLyricsContainer = styled.div`
-  width: 100%;
-  height: 100%;
-`;
 
 const Lyrics = props => {
   const [originalName, setOriginalName] = useState(
@@ -216,7 +208,31 @@ const Lyrics = props => {
             </AlbumSongs>
           </LyricsCase>
         ) : (
-          <Spinner animation='grow' variant='light' />
+          <div
+            style={{
+              width: "100vw",
+              height: "100%",
+              background: "yellow",
+              align_self: "center",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center"
+            }}
+          >
+            <div></div>
+          </div>
+
+          // <Spinner
+          //   animation='border'
+          //   role='status'
+          //   variant='dark'
+          //   style={{
+          //     width: "100px",
+          //     height: "200px",
+          //     background: "yellow",
+          //     align_self: "center"
+          //   }}
+          // />
         )}
       </Shadow>
       <Footer />
