@@ -51,15 +51,18 @@ const WrittenLyrics = styled.div`
     margin-bottom: 60px;
     text-align: center;
     font-size: 50px;
-    color: rgba(230, 223, 213);
+    color: #56c22f;
+    text-shadow: 0px 5px 3px #fc511b;
+    /* color: rgba(230, 223, 213); */
+    font-family: "Open Sans", sans-serif;
   }
   p {
-    margin: 0;
-    padding-left: 60px;
+    margin: 2px 0 0 0;
+    padding-left: 170px;
     color: rgba(230, 223, 213);
     line-height: 1.5;
     white-space: pre-wrap;
-    font-size: 20px;
+    font-size: 16px;
     text-shadow: 0px 2px 3px rgba(150, 150, 150, 1);
     font-family: "Open Sans", sans-serif;
   }
