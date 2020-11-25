@@ -6,8 +6,6 @@ import Stars from "../assests/stary_night.jpg";
 import JTA from "../assests/journey.jpg";
 import axios from "axios";
 import styled from "styled-components";
-import Spinner from "react-bootstrap/Spinner";
-import { findByLabelText } from "@testing-library/dom";
 
 const Background = styled.div`
   width: 100vw;
@@ -221,18 +219,6 @@ const Lyrics = props => {
           >
             <div></div>
           </div>
-
-          // <Spinner
-          //   animation='border'
-          //   role='status'
-          //   variant='dark'
-          //   style={{
-          //     width: "100px",
-          //     height: "200px",
-          //     background: "yellow",
-          //     align_self: "center"
-          //   }}
-          // />
         )}
       </Shadow>
       <Footer />
