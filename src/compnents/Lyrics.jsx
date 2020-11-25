@@ -19,7 +19,7 @@ const Background = styled.div`
 `;
 const Shadow = styled.div`
   width: 100%;
-  height: 1000px;
+  height: auto;
   display: flex;
   overflow: hidden;
   flex-direction: column;
@@ -33,7 +33,7 @@ const Shadow = styled.div`
 `;
 const LyricsCase = styled.div`
   width: 100%;
-  height: 1000px;
+  height: auto;
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
@@ -43,7 +43,7 @@ const LyricsCase = styled.div`
 
 const WrittenLyrics = styled.div`
   width: 47.6%;
-  height: 100%;
+  height: auto;
   margin-left: 2.4%;
 
   h1 {
@@ -61,8 +61,8 @@ const WrittenLyrics = styled.div`
 `;
 
 const AlbumSongs = styled.div`
-  width: 18.3%;
-  height: 600px;
+  width: 25.3%;
+  height: 800px;
   margin-right: 2.4%;
   margin-top: 100px;
   display: flex;
@@ -71,9 +71,9 @@ const AlbumSongs = styled.div`
   border: 1px solid rgb(140, 126, 118, 0.29);
   border-radius: 10px;
 
-  img {
-    width: 184px;
-    height: 184px;
+  & img {
+    width: 300px;
+    height: 300px;
     border-radius: 33px;
     margin-top: 20px;
   }
