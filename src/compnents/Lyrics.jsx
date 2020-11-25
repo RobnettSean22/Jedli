@@ -48,21 +48,26 @@ const WrittenLyrics = styled.div`
 
   h1 {
     margin-top: 100px;
+    margin-bottom: 60px;
     text-align: center;
-
+    font-size: 50px;
     color: rgba(230, 223, 213);
   }
   p {
-    margin: 0 0 0 0;
+    margin: 0;
+    padding-left: 60px;
     color: rgba(230, 223, 213);
     line-height: 1.5;
     white-space: pre-wrap;
+    font-size: 20px;
+    text-shadow: 0px 2px 3px rgba(150, 150, 150, 1);
+    font-family: "Open Sans", sans-serif;
   }
 `;
 
 const AlbumSongs = styled.div`
   width: 25.3%;
-  height: 800px;
+  height: 1000px;
   margin-right: 2.4%;
   margin-top: 100px;
   display: flex;
@@ -70,6 +75,7 @@ const AlbumSongs = styled.div`
   align-items: center;
   border: 1px solid rgb(140, 126, 118, 0.29);
   border-radius: 10px;
+  background: rgb(23, 22, 21, 0.9);
 
   & img {
     width: 300px;
@@ -80,15 +86,15 @@ const AlbumSongs = styled.div`
 `;
 
 const AlbumTitle = styled.div`
-  width: 192px;
+  width: 320px;
   height: 18px;
   display: flex;
-  margin-top: 5.5px;
+  margin-top: 15.5px;
   justify-content: center;
   align-items: center;
   font-size: 20px;
   h1 {
-    font-size: 16px;
+    font-size: 23px;
     font-family: "sawarabi";
     color: rgba(230, 223, 213);
     margin: 0;
@@ -96,8 +102,7 @@ const AlbumTitle = styled.div`
 `;
 const SongTitleList = styled.div`
   display: grid;
-  grid-template-columns: repeat(1, 224px);
-
+  grid-template-columns: repeat(1, 324px);
   grid-column-gap: 0px;
   grid-row-gap: 0px;
   border-left: 1px solid rgb(140, 126, 118, 0.3);
