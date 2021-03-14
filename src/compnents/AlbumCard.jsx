@@ -45,13 +45,13 @@ const Card = styled.span`
     }
   }
 `;
-const AlbumCard = props => {
+const AlbumCard = (props) => {
   const [albumCovers, setAlbumCovers] = useState([
     { id: 1492953358, albumnArt: JTA, albumName: "Journey To The Adventure" },
-    { id: 1523221577, albumnArt: Lucid, albumName: "Lucid" }
+    { id: 1523221577, albumnArt: Lucid, albumName: "Lucid" },
   ]);
 
-  return albumCovers.map(muse => {
+  return albumCovers.map((muse) => {
     const urlTitle = muse.albumName.replace(/\s/g, "-");
     return (
       <Card key={muse.id}>
@@ -61,8 +61,8 @@ const AlbumCard = props => {
             state: {
               collectionId: muse.id,
               name: muse.albumName,
-              img: muse.albumnArt
-            }
+              img: muse.albumnArt,
+            },
           }}
         >
           <figure>

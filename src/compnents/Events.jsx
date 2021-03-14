@@ -28,11 +28,31 @@ const PicIllusion = styled.div`
     box-shadow: inset 0px -18px 27px -7px rgba(29, 29, 29, 0.73);
   }
 `;
+const Container = styled.div`
+  width: 1000px;
+  height: 700px;
+  background: blue;
+  align-items: center;
+  display: flex;
+`;
+const DCircle = styled.div`
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: green;
+`;
+const ImageCircle = styled.div`
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: yellow;
+`;
 
 const Events = props => {
   return (
     <Background>
       <Header />
+
       <PicIllusion>
         <img src={EventBack} alt='background illusion' />
       </PicIllusion>
