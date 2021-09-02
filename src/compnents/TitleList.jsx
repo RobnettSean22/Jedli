@@ -52,9 +52,11 @@ const SongLinkContainer = styled.div`
 `;
 
 const TitleList = ({ titles }) => {
+  //'-' are put in to give url cleaner readability
   const urlPathAlbumn = titles.collectionName.replace(/\s/g, "-");
   const urlPathSong = titles.trackCensoredName.replace(/\s/g, "-");
   const getRepContents = titles.trackCensoredName.substring(25);
+  //names reduce for alignment and utlization of spacing
   const shortName =
     titles.trackCensoredName.length > 25
       ? titles.trackCensoredName.replace(getRepContents, "...")
@@ -69,7 +71,7 @@ const TitleList = ({ titles }) => {
           <Link
             to={{
               pathname: `/music/${urlPathAlbumn}/${urlPathSong}`,
-              state: { music: titles }
+              state: { music: titles },
             }}
           >
             {shortName}
