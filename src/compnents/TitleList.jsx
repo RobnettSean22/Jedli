@@ -52,11 +52,15 @@ const SongLinkContainer = styled.div`
 `;
 
 const TitleList = ({ titles }) => {
-  //'-' are put in to give url cleaner readability s
+  //　creation of  url extended path name
+
+  //Check note (libne 157) in AlbumSongList component
   const urlPathAlbumn = titles.collectionName.replace(/\s/g, "-");
   const urlPathSong = titles.trackCensoredName.replace(/\s/g, "-");
   const getRepContents = titles.trackCensoredName.substring(25);
   //names reduce for alignment and utlization of spacing
+
+  // Shortten titles that have more than 24 characters
   const shortName =
     titles.trackCensoredName.length > 25
       ? titles.trackCensoredName.replace(getRepContents, "...")
@@ -70,6 +74,7 @@ const TitleList = ({ titles }) => {
         <SongLinkContainer>
           <Link
             to={{
+              // title given to state to be passed to Lyrics component
               pathname: `/music/${urlPathAlbumn}/${urlPathSong}`,
               state: { music: titles },
             }}

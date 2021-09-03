@@ -152,6 +152,9 @@ const Albumsonglist = (props) => {
         <AlbumnInfoCapsule>
           <TitleListGrid>
             {jedliMusic
+              //sort song titles by ascending track number
+
+              // (*Note to Self*) possibly pass the 'deconAlbum.name' to avoide recreation in TitleList component (line 56)
               .sort((a, b) => a.trackNumber - b.trackNumber)
               .map((list) => {
                 return <TitleList titles={list} />;

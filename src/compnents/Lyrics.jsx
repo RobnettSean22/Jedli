@@ -144,6 +144,7 @@ const SongDisplay = styled.div`
 
 const Lyrics = (props) => {
   const [originalName, setOriginalName] = useState(
+    // removes "-" from the url pathname for usage in the application
     useParams().song.replace(/-/g, " ")
   );
   const [coverName, setCoverName] = useState(
@@ -151,15 +152,17 @@ const Lyrics = (props) => {
   );
 
   const [musicLyrics, setMusicLyrics] = useState(null);
-  // useEffect function calls to written lyrics function unpon component rendering
+  // callback writtenLyrics function unpon component rendering
   useEffect(() => {
     writenLyrics();
   }, []);
 
+  // call to to endpoint for lyric data
   const writenLyrics = async () => {
     const res = await axios.get("/lyrics");
     const { data } = await res;
 
+    // fliter lyric data based on selected albumn name
     setMusicLyrics(
       data.filter((albumnName) => {
         return albumnName.collectionName === coverName;
@@ -175,11 +178,13 @@ const Lyrics = (props) => {
         {musicLyrics ? (
           <LyricsCase>
             {musicLyrics
+              // filter through album lyrics to renders lyrics of specific song that was selected
               .filter((oneTitle) => {
                 return oneTitle.trackName === originalName;
               })
               .map((result) => {
                 return (
+                  // breaking spliting the text in to sections utilizing * markers placed within the text located in the data base for render
                   <WrittenLyrics>
                     <h1>{result.trackName}</h1>
 
