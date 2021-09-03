@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import Header from "./Header";
 import Footer from "./Footer";
+
 import Stars from "../assests/stary_night.jpg";
 import JTA from "../assests/journey.jpg";
 import axios from "axios";
@@ -112,13 +113,14 @@ const SongTitleList = styled.div`
   border-right: 1px solid rgb(140, 126, 118, 0.3);
   border-top: 1px solid rgb(140, 126, 118, 0.3);
   margin-top: 20px;
-  a {
+
+  /* a {
     text-decoration: none;
     color: rgba(230, 223, 213);
     &:hover {
       cursor: pointer;
     }
-  }
+  } */
   /* h1 {
       font-size: 13px;
       font-family: sawarabi;
@@ -140,6 +142,23 @@ const SongDisplay = styled.div`
   width: 100%;
   height: 46px;
   border-bottom: 1px solid rgb(140, 126, 118);
+  a {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    text-decoration: none;
+  }
+  &:hover {
+    cursor: pointer;
+  }
+  &:hover h3 {
+    cursor: pointer;
+    color: orange;
+  }
+  h3 {
+    font-size: 16px;
+    color: rgba(230, 223, 213);
+  }
 `;
 
 const Lyrics = (props) => {
@@ -202,19 +221,35 @@ const Lyrics = (props) => {
               </AlbumTitle>
 
               <SongTitleList>
-                {musicLyrics.map((sing) => {
-                  return (
-                    <SongDisplay key={sing.trackNumber}>
-                      <TrackNumberDisplay>
-                        <Link>{sing.trackNumber}</Link>
-                      </TrackNumberDisplay>
-                      <TrackNameDisplay>
-                        {" "}
-                        <Link>{sing.trackName}</Link>
-                      </TrackNameDisplay>
-                    </SongDisplay>
-                  );
-                })}
+                {musicLyrics
+                  // (*Note to Self*)sorting by track number again repetative will look into passing previous sort with props in ASL component
+                  .sort((a, b) => a.trackNumber - b.trackNumber)
+                  .map((sing) => {
+                    const keepPathAlbum = sing.collectionName.replace(
+                      /\s/g,
+                      "-"
+                    );
+                    const changePathSong = sing.trackName.replace(/\s/g, "-");
+                    return (
+                      <SongDisplay key={sing.trackNumber}>
+                        <Link
+                          to={{
+                            // title given to state to be passed to Lyrics component
+                            pathname: `/music/${keepPathAlbum}/${changePathSong}`,
+                            // state: { music: titles },
+                          }}
+                        >
+                          <TrackNumberDisplay>
+                            <h3>{sing.trackNumber}</h3>
+                          </TrackNumberDisplay>
+                          <TrackNameDisplay>
+                            {" "}
+                            <h3>{sing.trackName}</h3>
+                          </TrackNameDisplay>
+                        </Link>
+                      </SongDisplay>
+                    );
+                  })}
               </SongTitleList>
             </AlbumSongs>
           </LyricsCase>
