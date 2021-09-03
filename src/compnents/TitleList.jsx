@@ -52,7 +52,7 @@ const SongLinkContainer = styled.div`
 `;
 
 const TitleList = ({ titles }) => {
-  //'-' are put in to give url cleaner readability
+  //'-' are put in to give url cleaner readability s
   const urlPathAlbumn = titles.collectionName.replace(/\s/g, "-");
   const urlPathSong = titles.trackCensoredName.replace(/\s/g, "-");
   const getRepContents = titles.trackCensoredName.substring(25);
