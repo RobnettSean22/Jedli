@@ -111,22 +111,25 @@ const AlbumCoverCase = styled.div`
   }
 `;
 
-const Albumsonglist = props => {
+const Albumsonglist = (props) => {
   const [jedliMusic, setJedliMusic] = useState([]);
 
+  //props from AlbumCard
   const deconAlbum = props.location.state;
 
   useEffect(() => {
     itunesMusic();
   }, []);
 
+  // funtion for calling to itunes api endpoint for jedli music
   const itunesMusic = async () => {
     const res = await axios.get(
       `https://itunes.apple.com/search?term=JedLi&country=JP`
     );
     const { data } = await res;
     console.log(res.data);
-    const filterMusic = await data.results.filter(specArtist => {
+    //filtering  artist jedli from data and putting it in to state
+    const filterMusic = await data.results.filter((specArtist) => {
       return (
         specArtist.artistId === 1492578733 &&
         specArtist.collectionId === deconAlbum.collectionId
@@ -150,7 +153,7 @@ const Albumsonglist = props => {
           <TitleListGrid>
             {jedliMusic
               .sort((a, b) => a.trackNumber - b.trackNumber)
-              .map(list => {
+              .map((list) => {
                 return <TitleList titles={list} />;
               })}
           </TitleListGrid>

@@ -46,19 +46,23 @@ const Card = styled.span`
   }
 `;
 const AlbumCard = (props) => {
+  // State holds the album name and art work, and id (from itunes){needs to be add manual}
   const [albumCovers, setAlbumCovers] = useState([
     { id: 1492953358, albumnArt: JTA, albumName: "Journey To The Adventure" },
     { id: 1523221577, albumnArt: Lucid, albumName: "Lucid" },
   ]);
-
+  //creation of each album card link and url extended path name
   return albumCovers.map((muse) => {
+    // urlTitle personalizes url pathname for clearity and redability
     const urlTitle = muse.albumName.replace(/\s/g, "-");
     return (
       <Card key={muse.id}>
         <Link
           to={{
             pathname: `/music/${urlTitle}`,
+            // The id, album name and art work are passed through the link to the music/albumTitle
             state: {
+              //id passed for filter purposes in the itunesMusic funtion (located in AlbumSongList Component)
               collectionId: muse.id,
               name: muse.albumName,
               img: muse.albumnArt,

@@ -142,7 +142,7 @@ const SongDisplay = styled.div`
   border-bottom: 1px solid rgb(140, 126, 118);
 `;
 
-const Lyrics = props => {
+const Lyrics = (props) => {
   const [originalName, setOriginalName] = useState(
     useParams().song.replace(/-/g, " ")
   );
@@ -151,7 +151,7 @@ const Lyrics = props => {
   );
 
   const [musicLyrics, setMusicLyrics] = useState(null);
-
+  // useEffect function calls to written lyrics function unpon component rendering
   useEffect(() => {
     writenLyrics();
   }, []);
@@ -161,7 +161,7 @@ const Lyrics = props => {
     const { data } = await res;
 
     setMusicLyrics(
-      data.filter(albumnName => {
+      data.filter((albumnName) => {
         return albumnName.collectionName === coverName;
       })
     );
@@ -175,10 +175,10 @@ const Lyrics = props => {
         {musicLyrics ? (
           <LyricsCase>
             {musicLyrics
-              .filter(oneTitle => {
+              .filter((oneTitle) => {
                 return oneTitle.trackName === originalName;
               })
-              .map(result => {
+              .map((result) => {
                 return (
                   <WrittenLyrics>
                     <h1>{result.trackName}</h1>
@@ -197,7 +197,7 @@ const Lyrics = props => {
               </AlbumTitle>
 
               <SongTitleList>
-                {musicLyrics.map(sing => {
+                {musicLyrics.map((sing) => {
                   return (
                     <SongDisplay key={sing.trackNumber}>
                       <TrackNumberDisplay>
@@ -222,7 +222,7 @@ const Lyrics = props => {
               align_self: "center",
               display: "flex",
               justifyContent: "center",
-              alignItems: "center"
+              alignItems: "center",
             }}
           >
             <div></div>
