@@ -230,13 +230,12 @@ const Lyrics = (props) => {
                       "-"
                     );
                     const changePathSong = sing.trackName.replace(/\s/g, "-");
+
                     return (
                       <SongDisplay key={sing.trackNumber}>
                         <Link
                           to={{
-                            // title given to state to be passed to Lyrics component
                             pathname: `/music/${keepPathAlbum}/${changePathSong}`,
-                            // state: { music: titles },
                           }}
                         >
                           <TrackNumberDisplay>
@@ -244,7 +243,15 @@ const Lyrics = (props) => {
                           </TrackNumberDisplay>
                           <TrackNameDisplay>
                             {" "}
-                            <h3>{sing.trackName}</h3>
+                            <h3
+                            // onClick={(e) => {
+                            //   props.history.push(
+                            //     `/music/${keepPathAlbum}/${changePathSong}`
+                            //   );
+                            // }}
+                            >
+                              {sing.trackName}
+                            </h3>
                           </TrackNameDisplay>
                         </Link>
                       </SongDisplay>
