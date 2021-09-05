@@ -223,6 +223,7 @@ const Lyrics = (props) => {
               <SongTitleList>
                 {musicLyrics
                   // (*Note to Self*)sorting by track number again repetative will look into passing previous sort with props in ASL component
+                  // have the ability to useParams to accomplish this to use at a later date
                   .sort((a, b) => a.trackNumber - b.trackNumber)
                   .map((sing) => {
                     const keepPathAlbum = sing.collectionName.replace(
@@ -243,15 +244,7 @@ const Lyrics = (props) => {
                           </TrackNumberDisplay>
                           <TrackNameDisplay>
                             {" "}
-                            <h3
-                            // onClick={(e) => {
-                            //   props.history.push(
-                            //     `/music/${keepPathAlbum}/${changePathSong}`
-                            //   );
-                            // }}
-                            >
-                              {sing.trackName}
-                            </h3>
+                            <h3>{sing.trackName}</h3>
                           </TrackNameDisplay>
                         </Link>
                       </SongDisplay>
